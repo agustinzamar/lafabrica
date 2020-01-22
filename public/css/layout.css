@@ -1,0 +1,154 @@
+/*Fuentes*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap');
+
+:root{
+
+	/*Textos*/
+	--parrafoUno:12px;
+	--parrafoDos:16px;
+	--parrafoTres:18px;
+	--parrafoCuatro:24px;
+	--parrafoCinco:32px;
+	--parrafoSeis:36px;
+	--parrafoSiete:42px;
+	--parrafoOcho:48px;
+	--parrafoNueve:100px;
+
+	/*Colores*/
+	--morado: #6A1E74;
+	--rosado: #F93B80;
+	--verde: #019875;
+	--azul: #2D65B4;
+	--gris: #777779;
+
+	/*Botones*/
+	--borderRadius: 5px;
+
+	/*Transiciones*/
+	--transicion:.5s;
+
+}
+
+*{
+
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;	
+	font-family: 'Roboto', sans-serif;
+	text-decoration: none;
+	scroll-behavior: smooth;
+}
+
+/*INICIO SCROLL BAR*/
+::-webkit-scrollbar{
+
+  width: 10px;
+  background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb{
+
+  border-radius: 0px;
+  background: var(--rosado);
+}
+/*FIN SCROLL BAR*/
+
+
+header{
+
+	width: 100%;
+	height: 80px;
+	padding: 0 20px;
+	background: var(--rosado);
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: space-between;
+}
+
+header .logo{
+
+	height: 100%;
+}
+
+header .logo img{
+
+	height: 100%;
+}
+
+header .enlaces{
+
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+}
+
+header .enlaces a{
+
+	margin-right: 15px;
+	color: rgba(255,255,255,.5);
+	transition: var(--transicion);
+	font-size: var(--parrafoTres);
+}
+
+header .enlaces a:hover{
+
+	color: #fff;
+}
+
+footer{
+
+	width: 100%;
+	height: 350px;
+	padding: 80px 0;
+	background: var(--azul);
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: space-around;
+}
+
+footer p{
+
+	color: #fff;
+	font-size: var(--parrafoCuatro);
+}
+
+footer .redes a{
+
+	color: #fff;
+	margin: 0 20px;
+	font-size: var(--parrafoCinco);
+	transition: all var(--transicion);
+}
+
+footer .redes a i{
+	
+	font-size: var(--parrafoCinco);
+	transition: all var(--transicion);
+
+}
+footer .redes a i:hover{
+
+	transform: rotateY(180deg);
+
+}
