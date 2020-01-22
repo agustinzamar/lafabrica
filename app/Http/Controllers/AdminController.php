@@ -11,8 +11,8 @@ class AdminController extends Controller
         $this->middleware('auth');
     }
 
-    public function newPhotos()
+    public function dashboard()
     {
-        return view('admin.NewPhoto');
+        return view('admin.dashboard');
     }
 }
