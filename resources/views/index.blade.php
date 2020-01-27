@@ -7,9 +7,10 @@
 @section('title', 'Inicio')
 
 @section('main')
-<div class="portada">
+	<div class="portada">
 		
 		<h1> #ConstruyendoCiudadania </h1>
+		<img src="{{ asset('img/wave.svg') }}" alt="Fortalecer">
 
 	</div>
 
@@ -19,7 +20,7 @@
 
 	</section>
 
-	<section class="section2">
+	<section class="section2" id="hacemos">
 		
 		<p>¿Cómo trabajamos?</p>
 
@@ -28,7 +29,7 @@
 			<div class="fortalecer item">
 				
 				<img src="{{ asset('img/fortalecer.png') }}" alt="Fortalecer">
-				<h2>Fortalecer</h2>
+				<!-- <h2>Fortalecer</h2> -->
 				<p>Desarrollamos conocimientos y herramientas para consolidar el compromiso y mejorar las capacidades de las Organizaciones de la Sociedad Civil</p>
 
 			</div>
@@ -36,7 +37,7 @@
 			<div class="intervenir item">
 				
 				<img src="{{ asset('img/intervenir.png') }}" alt="Intervenir">
-				<h2>Intervenir</h2>
+				<!-- <h2>Intervenir</h2> -->
 				<p>Generamos acciones de participación ytrabajo colaborativo con la comunidad.</p>
 
 			</div>
@@ -44,7 +45,7 @@
 			<div class="compartir item">
 				
 				<img src="{{ asset('img/compartir.png') }}" alt="Compartir">
-				<h2>Compartir</h2>
+				<!-- <h2>Compartir</h2> -->
 				<p>Brindamos información sobre derechos ciudadanos.</p>
 
 			</div>
@@ -53,13 +54,13 @@
 
 	</section>
 
-	<section class="section3">
+	<section class="section3" id="novedades">
 		
 		<p>¿Qué hacemos?</p>
 
 		<div class="cultivar item">
 			
-			<img src="{{ asset('img/cultivar.jpg') }}" alt="DefinirAlternativo">
+			<img class="ocultar" src="{{ asset('img/cultivar.jpg') }}" alt="DefinirAlternativo">
 
 			<div class="texto">
 				
@@ -76,18 +77,18 @@
 			<div class="texto right">
 				
 				<h2>JujuyLab</h2>
-				<p> Interfaz de participación ciudadana y trabajo colaborativo.</p>
+				<p class="right"> Interfaz de participación ciudadana y trabajo colaborativo.</p>
 				<a href="#">Saber mas</a>
 			
 			</div>
 
-			<img src="{{ asset('img/lab.jpg') }}" alt="DefinirAlternativo">
+			<img class="ocultar" src="{{ asset('img/lab.jpg') }}" alt="DefinirAlternativo">
 
 		</div>
 
 		<div class="normas item">
 			
-			<img src="{{ asset('img/normas.jpg') }}" alt="DefinirAlternativo">
+			<img class="ocultar" src="{{ asset('img/normas.jpg') }}" alt="DefinirAlternativo">
 
 			<div class="texto">
 				
@@ -101,7 +102,7 @@
 
 	</section>
 
-	<section class="section4">
+	<section class="section4" id="contacto">
 			
 		<div class="contacto">
 

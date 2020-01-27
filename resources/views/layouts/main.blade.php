@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -9,6 +10,7 @@
     <title>{{ config('app.name', 'La Fabrica') }} - @yield('title')</title>
 
     <!-- Scripts -->
+    <!-- <script src="{{asset('js/header.js')}}"></script> -->
     @yield('scripts')
 
     <!-- Fonts -->
@@ -22,16 +24,16 @@
 </head>
 <body>
 	
-	<header>
+	<header id="header">
 		
-		<a href="#" class="logo"><img src="{{ asset('img/logo_gris.png') }}" alt="Logo La Fabrica"></a>
+		<a href="#" class="logo"><img src="{{ asset('img/logo.png') }}" alt="Logo La Fabrica"></a>
 
 		<div class="enlaces">
 			
 			<a href="#">La Fabrica</a>
-			<a href="#">¿Que hacemos?</a>
-			<a href="#">Novedades</a>
-			<a href="#">Contacto</a>
+			<a href="#hacemos">¿Que hacemos?</a>
+			<a href="#novedades">Novedades</a>
+			<a href="#contacto">Contacto</a>
 			<a href="#">Inicio</a>
 
 
@@ -45,6 +47,12 @@
 
 		</div>
 
+		<div class="btnMenu">
+			
+			<i class="fas fa-bars icons"></i>
+
+		</div>
+
 	</header>
 
     @section('main')
@@ -52,7 +60,7 @@
 
 	<footer>
 		
-		<p>TODOS LOS DERECHOS RESERVADOS &copy; {{ \Carbon\Carbon::now()->format('Y') }} LA FABRICA</p>
+		<p>TODOS LOS DERECHOS RESERVADOS &copy; {{ \Carbon\Carbon::now()->format('Y') }} - LA FABRICA.</p>
 
 		<div class="redes">
 			
@@ -63,6 +71,7 @@
 		</div>
 
 	</footer>
+    <script src="{{asset('js/header.js')}}"></script>
 
 </body>
 </html>
