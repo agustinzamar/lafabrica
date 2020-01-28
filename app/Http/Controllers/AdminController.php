@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Photo;
+use App\Article;
 
 class AdminController extends Controller
 {
@@ -28,5 +29,18 @@ class AdminController extends Controller
 
     public function newPhoto(){
         return view('admin.newPhoto');
+    }
+
+    public function news(){
+
+        $news = Article::all();
+
+        return view('admin.news')->with([
+            'news' => $news
+        ]);
+    }
+
+    public function newNew(){
+        return view('admin.newNew');
     }
 }

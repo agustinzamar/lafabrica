@@ -4,30 +4,31 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <h5 class="title">Todas las fotos</h5>
+            <h5 class="title">Todas las novedades</h5>
         </div>
         <div class="col-md-2">
-            <a href="{{ route('admin.newPhoto') }}" class="btn btn-primary float-right">
+            <a href="{{ route('admin.newNew') }}" class="btn btn-primary float-right">
                 Publicar nueva
             </a>
         </div>
         <div class="col-md-12 mt-3">
-            @if ($photos)
+            @if ($news)
                 <table class="table">
-                    <thead class="">
-                        <th width="20%">Vista previa</th>
-                        <th width="40%">Copete</th>
+                    <thead>
+                        <th width="20%">Titulo</th>
+                        <th width="50%">Cuerpo</th>
                         <th width="25%">Fecha de publicación</th>
                         <th width="5%">Acciones</th>
                     </thead>
                     <tbody>
-                        @foreach ($photos as $photo)
+                        @foreach ($news as $new)
                             <tr>
-                                <td><img src='{{ asset($photo->path) }}' alt="foto publicada" style="width:100%;"></td>
-                                <td>{{ $photo->description }}</td>
-                                <td>{{ $photo->created_at->format('d/m/Y') }}</td>
+                                <td>{{ $new->title }}</td>
+                                <td>{{ $new->body }}</td>
+                                <td>{{ $new->created_at->format('d/m/Y') }}</td>
                                 <td>
-                                    <button class="btn btn-danger btn-block" onclick="deleteItem(this, {{ $photo->id }})">Eliminar</button>
+                                    <button class="btn btn-primary btn-block">Ver</button>
+                                    <button class="btn btn-danger btn-block" onclick="deleteItem(this, {{ $new->id }})">Eliminar</button>
                                 </td>
                             </tr>
                         @endforeach

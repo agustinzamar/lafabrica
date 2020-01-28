@@ -38,7 +38,6 @@ class PhotosController extends Controller
         ]);
 
         $photo->description = $request->input('description');
-        $photo->project_id = $request->input('project_id') || null;
         
         $file = $request->file('photo');
         $name = \Str::random(90).now()->format('U').'.'.$file->extension();
