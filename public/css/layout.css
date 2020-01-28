@@ -6,11 +6,11 @@
 	/*Textos*/
 	--parrafoUno:12px;
 	--parrafoDos:16px;
-	--parrafoTres:18px;
+	--parrafoTres:18px; /*este*/
 	--parrafoCuatro:24px;
-	--parrafoCinco:32px;
+	--parrafoCinco:32px; /*este*/
 	--parrafoSeis:36px;
-	--parrafoSiete:42px;
+	--parrafoSiete:42px; /*este*/
 	--parrafoOcho:48px;
 	--parrafoNueve:100px;
 
@@ -58,6 +58,8 @@
 
 header{
 
+	position: fixed;
+	top: 0px;
 	width: 100%;
 	height: 80px;
 	padding: 0 20px;
@@ -70,11 +72,21 @@ header{
 	-ms-align-items: center;
 	align-items: center;
 	justify-content: space-between;
+	transition: var(--transicion);
+	z-index: 10;
 }
 
 header .logo{
 
-	height: 100%;
+	height: 80%;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+
+	-ms-align-items: center;
+	align-items: center;
 }
 
 header .logo img{
@@ -91,6 +103,7 @@ header .enlaces{
 	display: flex;
 	-ms-align-items: center;
 	align-items: center;
+	display: none;
 }
 
 header .enlaces a{
@@ -104,6 +117,12 @@ header .enlaces a{
 header .enlaces a:hover{
 
 	color: #fff;
+}
+
+header .btnMenu .icons{
+	
+	color: #fff;
+	font-size: 32px;
 }
 
 footer{
@@ -130,7 +149,9 @@ footer{
 footer p{
 
 	color: #fff;
-	font-size: var(--parrafoCuatro);
+	font-size: var(--parrafoTres);
+	text-align: center;
+	padding: 0 20px;
 }
 
 footer .redes a{
@@ -151,4 +172,12 @@ footer .redes a i:hover{
 
 	transform: rotateY(180deg);
 
+}
+
+@media screen and (max-width: 425px){
+
+	header .logo{
+
+		height: 50%;
+	}
 }
