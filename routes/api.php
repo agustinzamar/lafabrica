@@ -16,3 +16,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['prefix' => 'photos', ['middleware' => 'auth:api']], function(){
+    Route::post('/delete', 'PhotosController@delete')->name('photos.delete');
+    Route::post('/create', 'PhotosController@create')->name('photos.create');
+});

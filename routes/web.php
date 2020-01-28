@@ -19,8 +19,9 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/admin', 'AdminController@dashboard')->name('admin.dashboard');
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
-Route::group(['prefix' => '/admin'], function () {
-    Route::get('/photos', 'AdminController@newPhotos')->middleware('auth');
+    Route::get('/', 'AdminController@dashboard')->name('admin.dashboard');
+    Route::get('/fotos', 'AdminController@photos')->name('admin.photos');
+    Route::get('/fotos/nueva', 'AdminController@newPhoto')->name('admin.newPhoto');
 });
