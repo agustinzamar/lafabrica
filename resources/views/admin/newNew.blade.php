@@ -1,5 +1,19 @@
 @extends('layouts.admin')
 
+@section('styles')
+    <style>
+        .preview .photo-container{
+            display: flex;
+        }
+
+        .preview .photo-container img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -34,7 +48,7 @@
                     <input type="text" class="form-control" placeholder="Copete" name="description" id="description">
                 </div>
                 <div class="form-group">
-                    <textarea  class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                    <textarea  class="form-control" name="body" id="editor" cols="30" rows="10"></textarea>
                 </div>
                 <button type="button" class="btn btn-success btn-block float-right" id="submit">Publicar</button>
             </form>
@@ -44,7 +58,14 @@
 @endsection
 
 @section('scripts')
+    <!-- text editor scripts -->
+    <script src={{ asset('ckeditor/ckeditor.js') }}></script>
     <script>
+        CKEDITOR.replace('editor');
+    </script>
+    <script>
+
+
         const fileInput = document.querySelector('#photo');
         const frame = document.querySelector('#frame');
         const label = document.querySelector('#label')
@@ -77,18 +98,4 @@
                 })
         })
     </script>
-@endsection
-
-@section('styles')
-    <style>
-        .preview .photo-container{
-            display: flex;
-        }
-
-        .preview .photo-container img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    </style>
 @endsection

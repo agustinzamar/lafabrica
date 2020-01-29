@@ -74,14 +74,14 @@
                                     toastr.success('La foto fue eliminada.', 'Correcto');
                                 })
                                 .catch(error => {
-                                    console.log(error);
+                                    console.log(error.response.data);
                                     toastr.error('Lo sentimos, intente de nuevo mas tarde.', 'Algo salio mal')
                                 })
 
                             }
                         }
             });
-        
+
         }
 
     </script>

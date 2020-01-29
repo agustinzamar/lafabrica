@@ -20,8 +20,8 @@ class AdminController extends Controller
 
     public function photos(){
 
-        $photos = Photo::where('project_id', null)->get();
-        
+        $photos = Photo::where('imageable_type', null)->get();
+
         return view('admin.photos')->with([
             'photos' => $photos
         ]);

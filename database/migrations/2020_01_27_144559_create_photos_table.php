@@ -17,7 +17,8 @@ class CreatePhotosTable extends Migration
             $table->bigIncrements('id');
             $table->string('path');
             $table->string('description')->nullable()->default(null);
-            $table->bigInteger('project_id')->nullable()->default(null)->unsigned();
+            $table->string('imageable_type')->nullable()->default(null);
+            $table->bigInteger('imageable_id')->nullable()->default(null)->unsigned();
             $table->timestamps();
         });
     }

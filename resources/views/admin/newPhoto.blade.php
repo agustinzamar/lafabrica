@@ -56,6 +56,8 @@
 
             const data = new FormData(form);
 
+            console.log(data.get('photo'));
+
             axios.post(route('photos.create'), data)
                 .then(res => {
                     form.reset();
@@ -65,7 +67,7 @@
                     toastr.success('¡Listo! Ya podes ver la foto en la galeria.', 'Foto publicada.');
                 })
                 .catch(err => {
-                    console.log(err);
+                    console.log(err.response.data);
                     toastr.error('Lo sentimos, intente de nuevo mas tarde.', 'Algo salio mal.');
                 })
         })

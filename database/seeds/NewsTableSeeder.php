@@ -13,12 +13,11 @@ class NewsTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
 
-        for ($i=0; $i < 10; $i++) { 
-            
+        for ($i=0; $i < 10; $i++) {
+
             DB::table('news')->insert([
                 'title' => $faker->sentence(),
                 'body' => $faker->realText(),
-                'photo_id' => random_int(1,10),
                 'created_at' => now()
             ]);
 

@@ -11,4 +11,8 @@ class Photo extends Model
     public function getPathAttribute($value){
         return '/storage/'.$value;
     }
+
+    public function new(){
+        return $this->belongsTo('App\Article', 'photo_id');
+    }
 }

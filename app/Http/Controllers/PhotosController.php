@@ -15,13 +15,13 @@ class PhotosController extends Controller
         if($photo){
 
             try{
-                
+
                 $photo->delete();
                 return response('Photo deleted.', 200);
             }catch(Exception $e){
                 return response('Internal server Error', 500);
             }
-            
+
         }else{
             return response('Photo not found.', 404);
         }
@@ -34,14 +34,13 @@ class PhotosController extends Controller
         $request->validate([
             'photo' => 'required|image|max:255',
             'description' => 'string',
-            'project_id' => 'numeric|exists:projects,id',
         ]);
 
         $photo->description = $request->input('description');
-        
+
         $file = $request->file('photo');
         $name = \Str::random(90).now()->format('U').'.'.$file->extension();
-        
+
         try{
             $photo->path = $file->storeAs('photos', $name, 'public');
             $photo->save();
