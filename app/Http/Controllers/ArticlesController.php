@@ -9,6 +9,25 @@ use App\Photo;
 class ArticlesController extends Controller
 {
 
+    public function delete(Request $request){
+        $id = $request->input('id');
+        $new = Article::find($id);
+
+        if($new){
+
+            try{
+
+                $new->delete();
+                return response('New deleted.', 200);
+            }catch(Exception $e){
+                return response('Internal server Error', 500);
+            }
+
+        }else{
+            return response('New not found.', 404);
+        }
+    }
+
     public function create(Request $request){
 
         $request->validate([
@@ -32,11 +51,9 @@ class ArticlesController extends Controller
 
         try{
             $photo->path = $file->storeAs('photos', $name, 'public');
-            $photo->save();
-
-            $new->photo()->save($photo);
 
             $new->save();
+            $new->photo()->save($photo);
 
             return response($new, 200);
         }catch(Exception $e){

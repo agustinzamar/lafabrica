@@ -33,7 +33,7 @@ class AdminController extends Controller
 
     public function news(){
 
-        $news = Article::all();
+        $news = Article::with('photo')->get();
 
         return view('admin.news')->with([
             'news' => $news

@@ -12,7 +12,7 @@ class Photo extends Model
         return '/storage/'.$value;
     }
 
-    public function new(){
-        return $this->belongsTo('App\Article', 'photo_id');
+    public function imageable(){
+        return $this->morphTo();
     }
 }

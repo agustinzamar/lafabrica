@@ -48,7 +48,7 @@
                     <input type="text" class="form-control" placeholder="Copete" name="description" id="description">
                 </div>
                 <div class="form-group">
-                    <textarea  class="form-control" name="body" id="editor" cols="30" rows="10"></textarea>
+                    <textarea  class="form-control" name="body" id="body" cols="30" rows="10"></textarea>
                 </div>
                 <button type="button" class="btn btn-success btn-block float-right" id="submit">Publicar</button>
             </form>
@@ -61,7 +61,7 @@
     <!-- text editor scripts -->
     <script src={{ asset('ckeditor/ckeditor.js') }}></script>
     <script>
-        CKEDITOR.replace('editor');
+        //CKEDITOR.replace('body');
     </script>
     <script>
 
@@ -83,17 +83,16 @@
         submit.addEventListener('click', () => {
 
             const data = new FormData(form);
-
-            axios.post(route('photos.create'), data)
+            axios.post(route('news.create'), data)
                 .then(res => {
                     form.reset();
                     frame.src="";
                     label.textContent="";
 
-                    toastr.success('¡Listo! Ya podes ver la foto en la galeria.', 'Foto publicada.');
+                    toastr.success('¡Listo! La novedad fue publicada.', 'Novedad publicada.');
                 })
                 .catch(err => {
-                    console.log(err);
+                    console.log(err.response.data);
                     toastr.error('Lo sentimos, intente de nuevo mas tarde.', 'Algo salio mal.');
                 })
         })

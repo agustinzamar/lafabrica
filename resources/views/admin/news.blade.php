@@ -15,19 +15,25 @@
             @if ($news)
                 <table class="table">
                     <thead>
+                        <th width="20%">Foto</th>
                         <th width="20%">Titulo</th>
-                        <th width="50%">Cuerpo</th>
+                        <th width="30%">Cuerpo</th>
                         <th width="25%">Fecha de publicación</th>
                         <th width="5%">Acciones</th>
                     </thead>
                     <tbody>
                         @foreach ($news as $new)
                             <tr>
+                                @if ($new->photo)
+                                    <td><img src='{{ asset($new->photo->path) }}' alt={{ $new->photo->description }} style="width:100%;"></td>
+                                @else
+                                    <td></td>
+                                @endif
                                 <td>{{ $new->title }}</td>
                                 <td>{{ $new->body }}</td>
                                 <td>{{ $new->created_at->format('d/m/Y') }}</td>
                                 <td>
-                                    <button class="btn btn-primary btn-block">Ver</button>
+                                    <button class="btn btn-primary btn-block">Editar</button>
                                     <button class="btn btn-danger btn-block" onclick="deleteItem(this, {{ $new->id }})">Eliminar</button>
                                 </td>
                             </tr>
@@ -51,7 +57,7 @@
 
             bootbox.confirm({
                 title: '¿Desea continuar?',
-                message: 'La foto se eliminará permanentemente',
+                message: 'La novedad se eliminará permanentemente',
                 buttons: {
                     cancel: {
                         label: 'Cancelar'
@@ -63,7 +69,7 @@
                 callback: (result) => {
                             if(result){
 
-                                axios.post(route('photos.delete'),{
+                                axios.post(route('news.delete'),{
                                     id: id
                                 })
                                 .then(res => {
@@ -72,17 +78,17 @@
                                     const row = sender.closest('tr');
                                     tableBody.removeChild(row);
 
-                                    toastr.success('La foto fue eliminada.', 'Correcto');
+                                    toastr.success('La novedad fue eliminada.', 'Correcto');
                                 })
                                 .catch(error => {
-                                    console.log(error);
+                                    console.log(error.response.data);
                                     toastr.error('Lo sentimos, intente de nuevo mas tarde.', 'Algo salio mal')
                                 })
 
                             }
                         }
             });
-        
+
         }
 
     </script>
