@@ -14,13 +14,13 @@
 
 	</div>
 
-	<section class="section1">
+	<section class="section1" id="Nosotros">
 		
 		<p>EN LA <span>FÁBRICA</span> DISEÑAMOS, DESARROLLAMOS E IMPLEMENTAMOS ESTRATEGIAS DE PARTICIPACIÓN CIUDADANA PARA CONTRIBUIR AL DESARROLLO DE LA SOCIEDAD CIVIL.</p>
 
 	</section>
 
-	<section class="section2" id="hacemos">
+	<section class="section2" id="ComoTrabajamos">
 		
 		<p>¿Cómo trabajamos?</p>
 
@@ -54,7 +54,7 @@
 
 	</section>
 
-	<section class="section3" id="novedades">
+	<section class="section3" id="QueHacemos">
 		
 		<p>¿Qué hacemos?</p>
 
@@ -102,7 +102,7 @@
 
 	</section>
 
-	<section class="section4" id="contacto">
+	<section class="section4" id="Contacto">
 			
 		<div class="contacto">
 
