@@ -18,6 +18,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/galeria', 'HomeController@gallery')->name('gallery');
+Route::get('/jujuylab', 'HomeController@jujuyLab')->name('jujuyLab');
+Route::get('/cultivar', 'HomeController@cultivar')->name('cultivar');
+Route::get('/normas', 'HomeController@normas')->name('normas');
+Route::get('/novedades', 'HomeController@news')->name('news');
+Route::get('/proyectos', 'HomeController@projects')->name('projects');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
