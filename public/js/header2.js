@@ -22,17 +22,17 @@ class SideNav {
 	}
 
 	blockClicks (evt) {
-		
+
 		evt.stopPropagation();
 	}
 
 	showSideNav () {
-		
+
 		this.sideNavEl.classList.add('side-nav--visible');
 	}
 
 	hideSideNav () {
-		
+
 		this.sideNavEl.classList.remove('side-nav--visible');
 	}
 

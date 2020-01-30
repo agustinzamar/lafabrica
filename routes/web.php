@@ -24,6 +24,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('/', 'AdminController@dashboard')->name('admin.dashboard');
     Route::get('/fotos', 'AdminController@photos')->name('admin.photos');
     Route::get('/fotos/nueva', 'AdminController@newPhoto')->name('admin.newPhoto');
-    Route::get('/novedades', 'AdminController@news')->name('admin.news');
-    Route::get('/novedades/nueva', 'AdminController@newNew')->name('admin.newNew');
+
+    Route::get('novedades', 'AdminController@news')->name('admin.news');
+    Route::get('novedades/new', 'AdminController@newNew')->name('admin.newNew');
+    Route::post('novedades/delete', 'ArticlesController@delete')->name('news.delete');
+    Route::post('novedades/create', 'ArticlesController@create')->name('news.create');
+
 });

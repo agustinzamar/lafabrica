@@ -25,7 +25,7 @@
                         @foreach ($news as $new)
                             <tr>
                                 @if ($new->photo)
-                                    <td><img src='{{ asset($new->photo->path) }}' alt={{ $new->photo->description }} style="width:100%;"></td>
+                                    <td><img src='{{ asset($new->photo->path) }}' alt='{{ $new->photo->description }}' style="width:100%;"></td>
                                 @else
                                     <td></td>
                                 @endif
@@ -73,7 +73,6 @@
                                     id: id
                                 })
                                 .then(res => {
-                                    console.log(res);
                                     const tableBody = document.querySelector('table').children[1];
                                     const row = sender.closest('tr');
                                     tableBody.removeChild(row);
@@ -81,7 +80,6 @@
                                     toastr.success('La novedad fue eliminada.', 'Correcto');
                                 })
                                 .catch(error => {
-                                    console.log(error.response.data);
                                     toastr.error('Lo sentimos, intente de nuevo mas tarde.', 'Algo salio mal')
                                 })
 

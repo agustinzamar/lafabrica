@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}" id="csrf">
 
     <title>{{ config('app.name', 'La Fabrica') }}</title>
 
@@ -27,6 +27,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        axios.defaults.headers.common = {
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRF-TOKEN': document.getElementById('csrf').getAttribute('content')
+        };
+    </script>
     @routes
 </head>
 <body>
@@ -62,13 +68,13 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('admin.news') }}">
-                                        Noticias 
+                                        Noticias
                                     </a>
                                     <a class="dropdown-item" href="{{ route('admin.photos') }}">
-                                        Fotos 
+                                        Fotos
                                     </a>
                                     <a class="dropdown-item" href="{{ route('admin.news') }}">
-                                        Proyectos 
+                                        Proyectos
                                     </a>
                                 </div>
                             </li>
@@ -81,7 +87,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        Cerrar sesión 
+                                        Cerrar sesión
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf

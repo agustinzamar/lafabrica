@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Article;
 use App\Photo;
+use Illuminate\Support\Facades\Validator;
 
 class ArticlesController extends Controller
 {
@@ -18,21 +19,21 @@ class ArticlesController extends Controller
             try{
 
                 $new->delete();
-                return response('New deleted.', 200);
+                return response()->json('Ok', 200);
             }catch(Exception $e){
-                return response('Internal server Error', 500);
+                return response()->json('Server Error', 500);
             }
 
         }else{
-            return response('New not found.', 404);
+            return response()->json('Not found', 404);
         }
     }
 
     public function create(Request $request){
 
         $request->validate([
-            'photo' => 'required|image|max:255',
-            'description' => 'string',
+            'photo' => 'required|image',
+            'description' => 'string|nullable',
             'title' => 'required|string',
             'body' => 'required|string'
         ]);
@@ -55,9 +56,9 @@ class ArticlesController extends Controller
             $new->save();
             $new->photo()->save($photo);
 
-            return response($new, 200);
+            return redirect()->back()->with(['success' => 'La novedad se publicó correctamente']);
         }catch(Exception $e){
-            return response('Server error', 500);
+            return redirect()->back()->with(['error' => 'Lo sentimos, intente de nuevo mas tarde.']);
         }
 
     }
