@@ -22,8 +22,11 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
     Route::get('/', 'AdminController@dashboard')->name('admin.dashboard');
+
     Route::get('/fotos', 'AdminController@photos')->name('admin.photos');
-    Route::get('/fotos/nueva', 'AdminController@newPhoto')->name('admin.newPhoto');
+    Route::get('/fotos/new', 'AdminController@newPhoto')->name('admin.newPhoto');
+    Route::post('/fotos/delete', 'PhotosController@delete')->name('photos.delete');
+    Route::post('/fotos/create', 'photosController@create')->name('photos.create');
 
     Route::get('novedades', 'AdminController@news')->name('admin.news');
     Route::get('novedades/new', 'AdminController@newNew')->name('admin.newNew');

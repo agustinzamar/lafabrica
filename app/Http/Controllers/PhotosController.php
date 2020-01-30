@@ -33,7 +33,7 @@ class PhotosController extends Controller
 
         $request->validate([
             'photo' => 'required|image|max:255',
-            'description' => 'string',
+            'description' => 'string|nullable',
         ]);
 
         $photo->description = $request->input('description');
@@ -45,9 +45,9 @@ class PhotosController extends Controller
             $photo->path = $file->storeAs('photos', $name, 'public');
             $photo->save();
 
-            return response($photo, 200);
+            return redirect()->back()->with(['success' => 'Foto publicada correctamente']);
         }catch(Exception $e){
-            return response('Server error', 500);
+            return redirect()->back()->with(['error' => 'Lo sentimos, intente de nuevo mas tarde']);
         }
 
     }
