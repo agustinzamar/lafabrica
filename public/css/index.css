@@ -20,7 +20,7 @@
 	position: relative;
 }
 
-.portada img{
+.portada .wave{
 
 	position: absolute;
 	bottom: -1px;
@@ -37,8 +37,8 @@
 
 .section1{
 
-	height: 300px; /*originalmente era 400*/
-	padding: 0 150px; /*50px 150px*/
+	min-height: 500px; /*originalmente era 400*/
+	padding: 0 150px 150px 150px; /*50px 150px*/
 	text-align: center;
 	background: #fff;
 	display: -webkit-flex;
@@ -72,7 +72,7 @@
 
 .section2{
 
-	padding: 50px 150px 0 150px;
+	padding: 150px 0;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -86,7 +86,17 @@
 	-ms-align-items: center;
 	align-items: center;
 	justify-content: center;
-	background: #fff;
+	background: #f8fafd;
+	position: relative;
+}
+
+.section2 .wave{
+
+	position: absolute;
+	width: 100%;
+	bottom: -1px;
+	right: 0;
+	left: 0;
 }
 
 .section2 .trabajos{
@@ -120,13 +130,6 @@
 	height: 200px;
 	margin-bottom: 50px;
 }
-/*
-.section2 .trabajos .item h2{
-
-	font-size: var(--parrafoCinco);
-	padding: 30px 0;
-	font-weight: 900;
-}*/
 
 .section2 .trabajos .item p{
 
@@ -150,7 +153,16 @@
 	-ms-align-items: center;
 	align-items: center;
 	justify-content: center;
+	padding: 80px 0;
+	/*position: relative;*/
 }
+/*
+.section3 .wave{
+
+	position: absolute;
+	width: 100%;
+	top: -70px;
+}*/
 
 .section3 p{
 
@@ -161,7 +173,7 @@
 
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	height: 350px;
+	min-height: 350px;
 }
 
 .section3 .item img{
@@ -309,7 +321,7 @@
 
 	.section2{
 
-		padding: 0;
+		padding: 50px 0;
 	}
 
 	.section2 p, .section3 p, .section4 .contacto p{
@@ -319,11 +331,17 @@
 
 	.section2 .trabajos{
 
-		padding: 50px 10px;
+		padding: 50px 25px;
 	}
+
 	.section2 .trabajos .item img{
 
 		height: 180px;
+	}
+
+	.section3{
+
+		padding: 40px 0;
 	}
 
 	.section3 p{
@@ -383,6 +401,7 @@
 	.section3 .item .texto p{
 
 		text-align: center !important;
+		line-height: 26px;
 	}
 
 	.section3 .item .texto a{
@@ -411,14 +430,17 @@
 
 	.section2{
 
-		padding: 0 50px;
+		padding: 80px 0px;
 	}
+
+	.section2 .trabajos .item p{
+
+		padding: 0 40px;
+	}
+
 }
 
-@media (min-width: 801px) and (max-width: 1366px){
+/*@media (min-width: 801px) and (max-width: 1366px){
 
-	.section2{
 
-		padding: 50px 50px 0 50px;
-	}
-}
+}*/

@@ -10,7 +10,7 @@
 	<div class="portada">
 		
 		<h1> #ConstruyendoCiudadania </h1>
-		<img src="{{ asset('img/wave.svg') }}" alt="Fortalecer">
+		<img src="{{ asset('img/wave.svg') }}" class="wave" alt="wave">
 
 	</div>
 
@@ -38,7 +38,7 @@
 				
 				<img src="{{ asset('img/intervenir.png') }}" alt="Intervenir">
 				<!-- <h2>Intervenir</h2> -->
-				<p>Generamos acciones de participación ytrabajo colaborativo con la comunidad.</p>
+				<p>Generamos acciones de participación y trabajo colaborativo con la comunidad.</p>
 
 			</div>
 
@@ -50,12 +50,17 @@
 
 			</div>
 
+
 		</div>
+
+		<img src="{{ asset('img/wave6.svg') }}" class="wave" alt="wave">
 
 	</section>
 
 	<section class="section3" id="QueHacemos">
-		
+	
+		<!-- <img src="{{ asset('img/wave2.svg') }}" class="wave" alt="wave"> -->
+	
 		<p>¿Qué hacemos?</p>
 
 		<div class="cultivar item">
