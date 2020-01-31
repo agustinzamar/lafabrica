@@ -73,7 +73,7 @@
 	align-items: center;
 	justify-content: space-between;
 	transition: var(--transicion);
-	z-index: 2;
+	z-index: 50;
 }
 
 .header .logo{
@@ -136,7 +136,7 @@
 	height: 100%;
 	overflow: hidden;
 	pointer-events: none;
-	z-index: 3;
+	z-index: 100;
 }
 
 .side-nav--visible {

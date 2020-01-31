@@ -1,0 +1,130 @@
+.contenedor{
+
+	width: 100%;
+	min-height: 100vh;
+	padding: 50px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	position: relative;
+}
+
+.contenedor__item:nth-child(1){
+
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+
+	-ms-align-items: flex-start;
+	align-items: flex-start;
+
+	justify-content: center;
+}
+
+.item__titulo{
+
+	font-size: var(--parrafoNueve);
+	margin-bottom: 20px;
+	z-index: 2;
+}
+
+.item__parrafo{
+
+	font-size: var(--parrafoTres);
+	line-height: 2em;
+	z-index: 2;
+}
+
+.contenedor__item:nth-child(2){
+
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+
+	-ms-align-items: center;
+	align-items: center;
+
+	justify-content: center;
+}
+
+.contenedor__item:nth-child(2) i{
+	
+	transform: translatey(0px);
+	animation: float 6s ease-in-out infinite;
+	font-size: 600px;
+}
+
+@keyframes float {
+	0% {
+	
+		transform: translatey(0px);
+	}
+	50% {
+
+		transform: translatey(-20px);
+	}
+	100% {
+
+		transform: translatey(0px);
+	}
+}
+
+.contenedorr{
+
+	width: 100%;
+	min-height: 100vh;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+
+	-ms-align-items: center;
+	align-items: center;
+
+	justify-content: center;
+
+	background:-webkit-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../img/normas.jpg);
+	background:-o-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../img/normas.jpg);
+	background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../img/normas.jpg);
+}
+
+.contenedor__titulo, .contenedor__parrafo{
+
+	text-align: center;
+	color: #FFF;
+}
+
+.contenedor__titulo{
+
+	margin-bottom: 20px;
+	font-size: var(--parrafoNueve);
+}
+
+.contenedor__parrafo{
+
+	font-size: var(--parrafoCinco);
+	line-height: 2em;
+	padding: 0 120px;
+}
