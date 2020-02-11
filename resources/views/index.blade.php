@@ -71,7 +71,7 @@
 				
 				<h2>Cultivar</h2>
 				<p>Espacio de formación e investigación en el campo de las organizaciones sociales, la responsabilidad social y la sociedad civil.</p>
-				<a href="#">Saber mas</a>
+				<a href="{{ route('normas') }}#Cultivar">Saber mas</a>
 
 			</div>
 
@@ -83,7 +83,7 @@
 				
 				<h2>JujuyLab</h2>
 				<p class="right"> Interfaz de participación ciudadana y trabajo colaborativo.</p>
-				<a href="#">Saber mas</a>
+				<a href="{{ route('normas') }}#LabJujuy">Saber mas</a>
 			
 			</div>
 
@@ -99,7 +99,7 @@
 				
 				<h2>Las Normas que nos Normal</h2>
 				<p>Plataforma para difundir y promover los derechos ciudadanos.</p>
-				<a href="#">Saber mas</a>
+				<a href="{{ route('normas') }}#Normas">Saber mas</a>
 
 			</div>
 

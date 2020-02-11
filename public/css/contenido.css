@@ -1,4 +1,4 @@
-.contenedor{
+/*.contenedor{
 
 	width: 100%;
 	min-height: 100vh;
@@ -83,8 +83,13 @@
 		transform: translatey(0px);
 	}
 }
-
+*/
 .contenedorr{
+
+	
+}
+
+.contenedor__item{
 
 	width: 100%;
 	min-height: 100vh;
@@ -104,27 +109,47 @@
 	align-items: center;
 
 	justify-content: center;
+}
+
+.contenedor__item:nth-child(1){
+
+	background:-webkit-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../img/cultivar.jpg);
+	background:-o-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../img/cultivar.jpg);
+	background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../img/cultivar.jpg);
+}
+
+.contenedor__item:nth-child(2){
+
+	background:-webkit-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../img/lab.jpg);
+	background:-o-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../img/lab.jpg);
+	background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../img/lab.jpg);
+}
+
+.contenedor__item:nth-child(3){
 
 	background:-webkit-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../img/normas.jpg);
 	background:-o-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../img/normas.jpg);
 	background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../img/normas.jpg);
 }
 
-.contenedor__titulo, .contenedor__parrafo{
+.item__titulo, .item__parrafo{
 
 	text-align: center;
 	color: #FFF;
 }
 
-.contenedor__titulo{
+.item__titulo{
 
 	margin-bottom: 20px;
-	font-size: var(--parrafoNueve);
+	font-size: var(--parrafoOcho);
+	width: 85%;
+	text-align: left;
 }
 
-.contenedor__parrafo{
+.item__parrafo{
 
-	font-size: var(--parrafoCinco);
+	font-size: var(--parrafoCuatro);
 	line-height: 2em;
-	padding: 0 120px;
+	width: 85%;
+	text-align: left;
 }
