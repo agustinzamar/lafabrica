@@ -1,22 +1,31 @@
-let lastScrollTop = 0;
+// let lastScrollTop = 0;
 
-header = document.getElementById('header');
+// header = document.getElementById('header');
 
-window.addEventListener('scroll', miScrollTop);
+// window.addEventListener('scroll', miScrollTop);
 
-function miScrollTop(){
+// function miScrollTop(){
 
-	let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+// 	let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-	if(scrollTop > lastScrollTop){
+// 	if(scrollTop > lastScrollTop){
 
-		header.style.top = "-80px";
-	}
+// 		header.style.top = "-80px";
+// 	}
 
-	else{
+// 	else{
 
-		header.style.top = "0px";
-	}
+// 		header.style.top = "0px";
+// 	}
 
-	lastScrollTop = scrollTop;
+// 	lastScrollTop = scrollTop;
+// }
+
+
+window.addEventListener("scroll", scrollHeader);
+
+function scrollHeader(){
+
+	let header = document.getElementById('header');
+	header.classList.toggle("sticky", window.scrollY > 0);
 }

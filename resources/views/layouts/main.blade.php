@@ -36,19 +36,20 @@
 		<div class="enlaces">
 
 
-			<a href="#"><li><span>Inicio</span></li></a>
+			<a href="{{ route('home') }}"><li><span>Inicio</span></li></a>
 			<a href="#Nosotros"><li><span>Sobre Nosotros</span></li></a>
-			<a href="#ComoTrabajamos"><li><span>¿Como Trabajamos?</span></li></a>
-			<a href="#QueHacemos"><li><span>¿Que Hacemos?</span></li></a>
+			<a href="#ComoTrabajamos"><li><span>¿Cómo Trabajamos?</span></li></a>
+			<a href="#QueHacemos"><li><span>¿Qué Hacemos?</span></li></a>
 			<!-- <a href="#Novedades"><li><span>Novedades</span></li></a> -->
 			<a href="#Contacto"><li><span>Contacto</span></li></a>
 
 
 			<div class="redes">
 
-				<a href="#"><i class="fab fa-facebook-f"></i></a>
-				<a href="#"><i class="fab fa-twitter"></i></a>
-				<a href="#"><i class="fab fa-instagram"></i></a>
+				<a target="_blank" href="https://www.facebook.com/lafabricajujuy/"><i class="fab fa-facebook-f"></i></a>
+				<a target="_blank" href="https://twitter.com/lafabricajujuy?s=08"><i class="fab fa-twitter"></i></a>
+				<a target="_blank" href="https://www.instagram.com/lafabricajujuy/?igshid=1icfi0o2fdrua"><i class="fab fa-instagram"></i></a>
+				<a target="_blank" href="https://www.linkedin.com/company/fundaci%C3%B3nlaf%C3%A1brica/about/"><i class="fab fa-linkedin-in"></i></a>
 
 			</div>
 
@@ -70,7 +71,7 @@
 
 			<ul class="side-nav__content">
 
-				<a href="#"><li><span>Inicio</span></li></a>
+				<a href="{{ route('home') }}"><li><span>Inicio</span></li></a>
 				<a href="#Nosotros"><li><span>Sobre Nosotros</span></li></a>
 				<a href="#ComoTrabajamos"><li><span>¿Como Trabajamos?</span></li></a>
 				<a href="#QueHacemos"><li><span>¿Que Hacemos?</span></li></a>
@@ -81,9 +82,10 @@
 
 			<div class="redes">
 
-				<a href="#"><i class="fab fa-facebook-f"></i></a>
-				<a href="#"><i class="fab fa-twitter"></i></a>
-				<a href="#"><i class="fab fa-instagram"></i></a>
+				<a target="_blank" href="https://www.facebook.com/lafabricajujuy/"><i class="fab fa-facebook-f"></i></a>
+				<a target="_blank" href="https://twitter.com/lafabricajujuy?s=08"><i class="fab fa-twitter"></i></a>
+				<a target="_blank" href="https://www.instagram.com/lafabricajujuy/?igshid=1icfi0o2fdrua"><i class="fab fa-instagram"></i></a>
+				<a target="_blank" href="https://www.linkedin.com/company/fundaci%C3%B3nlaf%C3%A1brica/about/"><i class="fab fa-linkedin-in"></i></a>
 
 			</div>
 
@@ -97,13 +99,14 @@
 
 	<footer>
 
-		<p>TODOS LOS DERECHOS RESERVADOS &copy; {{ \Carbon\Carbon::now()->format('Y') }} - LA FABRICA.</p>
+		<p>TODOS LOS DERECHOS RESERVADOS &copy; {{ \Carbon\Carbon::now()->format('Y') }} - LA FÁBRICA.</p>
 
 		<div class="redes">
 
-			<a href="#"><i class="fab fa-facebook-f"></i></a>
-			<a href="#"><i class="fab fa-twitter"></i></a>
-			<a href="#"><i class="fab fa-instagram"></i></a>
+			<a target="_blank" href="https://www.facebook.com/lafabricajujuy/"><i class="fab fa-facebook-f"></i></a>
+			<a target="_blank" href="https://twitter.com/lafabricajujuy?s=08"><i class="fab fa-twitter"></i></a>
+			<a target="_blank" href="https://www.instagram.com/lafabricajujuy/?igshid=1icfi0o2fdrua"><i class="fab fa-instagram"></i></a>
+			<a target="_blank" href="https://www.linkedin.com/company/fundaci%C3%B3nlaf%C3%A1brica/about/"><i class="fab fa-linkedin-in"></i></a>
 
 		</div>
 

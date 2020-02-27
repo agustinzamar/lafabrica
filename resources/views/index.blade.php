@@ -46,7 +46,7 @@
 				
 				<img src="{{ asset('img/compartir.png') }}" alt="Compartir">
 				<!-- <h2>Compartir</h2> -->
-				<p>Brindamos información sobre derechos ciudadanos.</p>
+				<p>Brindamos información sobre derechos ciudadanos para fortalecer el ejercicio de la Democracia.</p>
 
 			</div>
 
@@ -58,20 +58,18 @@
 	</section>
 
 	<section class="section3" id="QueHacemos">
-	
-		<!-- <img src="{{ asset('img/wave2.svg') }}" class="wave" alt="wave"> -->
-	
+		
 		<p>¿Qué hacemos?</p>
 
 		<div class="cultivar item">
 			
-			<img class="ocultar" src="{{ asset('img/cultivar.jpg') }}" alt="DefinirAlternativo">
+			<img class="ocultar" src="{{ asset('img/cultivar.png') }}" alt="DefinirAlternativo">
 
 			<div class="texto">
 				
 				<h2>Cultivar</h2>
 				<p>Espacio de formación e investigación en el campo de las organizaciones sociales, la responsabilidad social y la sociedad civil.</p>
-				<a href="{{ route('normas') }}#Cultivar">Saber mas</a>
+				<a class="saberMas1" href="{{ route('normas') }}#Cultivar">Saber mas</a>
 
 			</div>
 
@@ -81,25 +79,25 @@
 			
 			<div class="texto right">
 				
-				<h2>JujuyLab</h2>
+				<h2>LabJujuy</h2>
 				<p class="right"> Interfaz de participación ciudadana y trabajo colaborativo.</p>
-				<a href="{{ route('normas') }}#LabJujuy">Saber mas</a>
+				<a class="saberMas2" href="{{ route('normas') }}#LabJujuy">Saber mas</a>
 			
 			</div>
 
-			<img class="ocultar" src="{{ asset('img/lab.jpg') }}" alt="DefinirAlternativo">
+			<img class="ocultar" src="{{ asset('img/lab.png') }}" alt="DefinirAlternativo">
 
 		</div>
 
 		<div class="normas item">
 			
-			<img class="ocultar" src="{{ asset('img/normas.jpg') }}" alt="DefinirAlternativo">
+			<img class="ocultar" src="{{ asset('img/normas.png') }}" alt="DefinirAlternativo">
 
 			<div class="texto">
 				
-				<h2>Las Normas que nos Normal</h2>
+				<h2>Las Normas que nos Norman</h2>
 				<p>Plataforma para difundir y promover los derechos ciudadanos.</p>
-				<a href="{{ route('normas') }}#Normas">Saber mas</a>
+				<a class="saberMas3" href="{{ route('normas') }}#Normas">Saber mas</a>
 
 			</div>
 

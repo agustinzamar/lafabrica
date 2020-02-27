@@ -2,9 +2,9 @@
 
 	height: 100vh;
 	width: 100%;
-	background:-webkit-linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/1.2.jpg);
-	background:-o-linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/1.2.jpg);
-	background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/1.2.jpg);
+	background:-webkit-linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/1.2.1.jpg);
+	background:-o-linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/1.2.1.jpg);
+	background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/1.2.1.jpg);
 	background-size:cover;
 	background-position:center;
 	background-repeat:no-repeat;
@@ -68,6 +68,7 @@
 	font-weight: 900;
 	width: 100%;
 	text-align: center;
+	color: #535354;
 }
 
 .section2{
@@ -154,6 +155,8 @@
 	align-items: center;
 	justify-content: center;
 	padding: 80px 0;
+	max-width: 1300px;
+	margin: auto;
 	/*position: relative;*/
 }
 /*
@@ -205,6 +208,7 @@
 
 	font-size: var(--parrafoCinco);
 	font-weight: 900;
+	color: #535354;
 }
 
 .section3 .item .texto p{
@@ -220,16 +224,45 @@
 
 	font-size: var(--parrafoTres);
 	padding: 15px 30px;
-	border: 1px solid #000;
 	border-radius: var(--borderRadius);
 	color: #000;
 	transition: var(--transicion);
 }
 
-.section3 .item .texto a:hover{
+.section3 .item .texto .saberMas1{
+
+	border: 1px solid var(--verde);
+	color: var(--verde);
+}
+
+.section3 .item .texto .saberMas2{
+
+	border: 1px solid var(--rosado);
+	color: var(--rosado);
+}
+
+.section3 .item .texto .saberMas3{
+
+	border: 1px solid var(--morado);
+	color: var(--morado);
+}
+
+.section3 .item .texto .saberMas1:hover{
 
 	color: #fff;
-	background: #000;
+	background: var(--verde);
+}
+
+.section3 .item .texto .saberMas2:hover{
+
+	color: #fff;
+	background: var(--rosado);
+}
+
+.section3 .item .texto .saberMas3:hover{
+
+	color: #fff;
+	background: var(--morado);
 }
 
 .section3 .item .right{
@@ -262,7 +295,7 @@
 
 	font-size: var(--parrafoSiete);
 	font-weight: 900;
-	color: #000;
+	color: #535354;
 	text-align: center;
 	margin-bottom: 50px;
 }
@@ -440,7 +473,21 @@
 
 }
 
-/*@media (min-width: 801px) and (max-width: 1366px){
+@media (min-width: 801px) and (max-width: 1366px){
 
+	.section1{
 
-}*/
+		min-height: 300px; /*originalmente era 400*/
+		padding: 0 150px; /*50px 150px*/
+		text-align: center;
+		background: #fff;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: center;
+		-ms-align-items: center;
+		align-items: center;
+	}
+}

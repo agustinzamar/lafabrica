@@ -1,14 +1,23 @@
-/*.contenedor{
+.contenedor{
 
-	width: 100%;
-	min-height: 100vh;
-	padding: 50px;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	position: relative;
+	max-width: 1300px;
+	margin: 0 auto;
+	padding: 100px 0;
 }
 
-.contenedor__item:nth-child(1){
+.contenedor__item{
+
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-row-gap: 20px;
+}
+
+.item__imagen{
+
+	animation: float 6s ease-in-out infinite;
+}
+
+.item__texto{
 
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -22,52 +31,23 @@
 	-o-flex-direction: column;
 	flex-direction: column;
 
-	-ms-align-items: flex-start;
-	align-items: flex-start;
-
 	justify-content: center;
+
 }
 
 .item__titulo{
 
-	font-size: var(--parrafoNueve);
-	margin-bottom: 20px;
-	z-index: 2;
+	font-size: var(--parrafoCinco);
+	margin-bottom: 10px;
 }
 
 .item__parrafo{
 
 	font-size: var(--parrafoTres);
-	line-height: 2em;
-	z-index: 2;
+	font-weight: 400;
+	line-height: 26px;
 }
 
-.contenedor__item:nth-child(2){
-
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-
-	-webkit-flex-direction: column;
-	-moz-flex-direction: column;
-	-ms-flex-direction: column;
-	-o-flex-direction: column;
-	flex-direction: column;
-
-	-ms-align-items: center;
-	align-items: center;
-
-	justify-content: center;
-}
-
-.contenedor__item:nth-child(2) i{
-	
-	transform: translatey(0px);
-	animation: float 6s ease-in-out infinite;
-	font-size: 600px;
-}
 
 @keyframes float {
 	0% {
@@ -82,74 +62,3 @@
 
 		transform: translatey(0px);
 	}
-}
-*/
-.contenedorr{
-
-	
-}
-
-.contenedor__item{
-
-	width: 100%;
-	min-height: 100vh;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-
-	-webkit-flex-direction: column;
-	-moz-flex-direction: column;
-	-ms-flex-direction: column;
-	-o-flex-direction: column;
-	flex-direction: column;
-
-	-ms-align-items: center;
-	align-items: center;
-
-	justify-content: center;
-}
-
-.contenedor__item:nth-child(1){
-
-	background:-webkit-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../img/cultivar.jpg);
-	background:-o-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../img/cultivar.jpg);
-	background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../img/cultivar.jpg);
-}
-
-.contenedor__item:nth-child(2){
-
-	background:-webkit-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../img/lab.jpg);
-	background:-o-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../img/lab.jpg);
-	background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../img/lab.jpg);
-}
-
-.contenedor__item:nth-child(3){
-
-	background:-webkit-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../img/normas.jpg);
-	background:-o-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../img/normas.jpg);
-	background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../img/normas.jpg);
-}
-
-.item__titulo, .item__parrafo{
-
-	text-align: center;
-	color: #FFF;
-}
-
-.item__titulo{
-
-	margin-bottom: 20px;
-	font-size: var(--parrafoOcho);
-	width: 85%;
-	text-align: left;
-}
-
-.item__parrafo{
-
-	font-size: var(--parrafoCuatro);
-	line-height: 2em;
-	width: 85%;
-	text-align: left;
-}
