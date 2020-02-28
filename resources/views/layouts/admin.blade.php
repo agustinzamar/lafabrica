@@ -12,6 +12,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8fb0187cba.js" crossorigin="anonymous"></script>
 
     <!-- Styles -->
     <link rel="stylesheet" href={{ asset('css/app.css') }}>
@@ -57,6 +58,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('home') }}">
                                 Ir al sitio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.dashboard') }}">
+                                Dashboard
                             </a>
                         </li>
                         <!-- Authentication Links -->
