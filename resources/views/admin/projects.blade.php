@@ -12,7 +12,10 @@
             @foreach ($projects as $item)
                 <div class="col-md-4 text-center">
                     <div class="card">
-                        <a href="{{ route('admin.project', $item->id) }}">{{ $item->name }}</a>
+                        <a href="{{ route('admin.project', $item->id) }}" class="d-flex flex-column">
+                            <img src=" {{ asset('img/'.$item->main_picture) }} " alt="">
+                            {{ $item->name }}
+                        </a>
                     </div>
                 </div>
             @endforeach
