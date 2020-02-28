@@ -70,10 +70,7 @@
                                     <a class="dropdown-item" href="{{ route('admin.news') }}">
                                         Noticias
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('admin.photos') }}">
-                                        Fotos
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('admin.news') }}">
+                                    <a class="dropdown-item" href="{{ route('admin.projects') }}">
                                         Proyectos
                                     </a>
                                 </div>
