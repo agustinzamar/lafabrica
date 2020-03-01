@@ -30,10 +30,10 @@
                                     <td></td>
                                 @endif
                                 <td>{{ $new->title }}</td>
-                                <td>{{ $new->body }}</td>
+                                <td>{!! Str::words($new->body, 20, '...'); !!}</td>
                                 <td>{{ $new->created_at->format('d/m/Y') }}</td>
                                 <td>
-                                    <button class="btn btn-primary btn-block">Editar</button>
+                                    <a class="btn btn-primary btn-block" href="{{ route('news', $new->id) }}">Ver</a>
                                     <button class="btn btn-danger btn-block" onclick="deleteItem(this, {{ $new->id }})">Eliminar</button>
                                 </td>
                             </tr>
