@@ -49,7 +49,7 @@
                     <input type="text" class="form-control" placeholder="Copete" name="description" id="description" value={{ old('description') }}>
                 </div>
                 <div class="form-group">
-                    <textarea  class="form-control" name="body" id="body" cols="30" rows="10" required placeholder="Cuerpo de la noticia">{{old('body')}}</textarea>
+                    <textarea  class="form-control ckeditor" name="body" id="body" cols="30" rows="10" required placeholder="Cuerpo de la noticia">{{old('body')}}</textarea>
                 </div>
                 @if ($errors->any())
                     @foreach ($errors->all() as $error)
@@ -67,9 +67,9 @@
 
 @section('scripts')
     <!-- text editor scripts -->
-    <script src={{ asset('ckeditor/ckeditor.js') }}></script>
+    <script src="{{ asset('/vendors/ckeditor/ckeditor.js') }}"></script>
     <script>
-        //CKEDITOR.replace('body');
+        CKEDITOR.config.language = 'es'
     </script>
     <script>
         const fileInput = document.querySelector('#photo');

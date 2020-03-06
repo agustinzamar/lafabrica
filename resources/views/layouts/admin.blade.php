@@ -12,6 +12,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8fb0187cba.js" crossorigin="anonymous"></script>
 
     <!-- Styles -->
     <link rel="stylesheet" href={{ asset('css/app.css') }}>
@@ -59,6 +60,11 @@
                                 Ir al sitio
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.dashboard') }}">
+                                Dashboard
+                            </a>
+                        </li>
                         <!-- Authentication Links -->
                         @auth
                             <li class="nav-item dropdown">
@@ -70,10 +76,7 @@
                                     <a class="dropdown-item" href="{{ route('admin.news') }}">
                                         Noticias
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('admin.photos') }}">
-                                        Fotos
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('admin.news') }}">
+                                    <a class="dropdown-item" href="{{ route('admin.projects') }}">
                                         Proyectos
                                     </a>
                                 </div>

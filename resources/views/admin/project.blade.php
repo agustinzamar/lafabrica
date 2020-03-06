@@ -4,49 +4,43 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <h5 class="title">Todas las novedades</h5>
+            <h5 class="title">Galeria de fotos de "{{ $project->name }}"</h5>
         </div>
         <div class="col-md-2">
-            <a href="{{ route('admin.newNew') }}" class="btn btn-primary float-right">
+            <a href="{{ route('admin.newPhoto', $project->id) }}" class="btn btn-primary float-right">
                 Publicar nueva
             </a>
         </div>
-        <div class="col-md-12 mt-3">
-            @if ($news)
+    </div>
+    <div class="row mt-5">
+            @if (count($project->photos) > 0)
                 <table class="table">
-                    <thead>
-                        <th width="20%">Foto</th>
-                        <th width="20%">Titulo</th>
-                        <th width="30%">Cuerpo</th>
+                    <thead class="">
+                        <th width="20%">Vista previa</th>
+                        <th width="40%">Copete</th>
                         <th width="25%">Fecha de publicación</th>
                         <th width="5%">Acciones</th>
                     </thead>
                     <tbody>
-                        @foreach ($news as $new)
+                        @foreach ($project->photos as $photo)
                             <tr>
-                                @if ($new->photo)
-                                    <td><img src='{{ asset($new->photo->path) }}' alt='{{ $new->photo->description }}' style="width:100%;"></td>
-                                @else
-                                    <td></td>
-                                @endif
-                                <td>{{ $new->title }}</td>
-                                <td>{!! Str::words($new->body, 20, '...'); !!}</td>
-                                <td>{{ $new->created_at->format('d/m/Y') }}</td>
+                                <td><img src='{{ asset($photo->path) }}' alt="foto publicada" style="width:100%;"></td>
+                                <td>{{ $photo->description }}</td>
+                                <td>{{ $photo->created_at->format('d/m/Y') }}</td>
                                 <td>
-                                    <a class="btn btn-primary btn-block" href="{{ route('news', $new->id) }}">Ver</a>
-                                    <button class="btn btn-danger btn-block" onclick="deleteItem(this, {{ $new->id }})">Eliminar</button>
+                                    <button class="btn btn-danger btn-block" onclick="deleteItem(this, {{ $photo->id }})">Eliminar</button>
                                 </td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
             @else
-                <div class="text-center">
-                    <h5 class="title mt-5">Aún no hay nada publicado.</h5>
-                    <a href="{{ route('admin.newPhoto') }}" class="btn btn-primary block">Publicar</a>
+                <div class="col-md-12 text-center">
+                    <div class="card p-3">
+                       Este proyecto no tiene fotos publicadas aún.
+                    </div>
                 </div>
             @endif
-        </div>
     </div>
 </div>
 @endsection
@@ -57,7 +51,7 @@
 
             bootbox.confirm({
                 title: '¿Desea continuar?',
-                message: 'La novedad se eliminará permanentemente',
+                message: 'La foto se eliminará permanentemente',
                 buttons: {
                     cancel: {
                         label: 'Cancelar'
@@ -69,17 +63,19 @@
                 callback: (result) => {
                             if(result){
 
-                                axios.post(route('news.delete'),{
+                                axios.post(route('photos.delete'),{
                                     id: id
                                 })
                                 .then(res => {
+                                    console.log(res);
                                     const tableBody = document.querySelector('table').children[1];
                                     const row = sender.closest('tr');
                                     tableBody.removeChild(row);
 
-                                    toastr.success('La novedad fue eliminada.', 'Correcto');
+                                    toastr.success('La foto fue eliminada.', 'Correcto');
                                 })
                                 .catch(error => {
+                                    console.log(error.response.data);
                                     toastr.error('Lo sentimos, intente de nuevo mas tarde.', 'Algo salio mal')
                                 })
 
@@ -91,3 +87,5 @@
 
     </script>
 @endsection
+
+

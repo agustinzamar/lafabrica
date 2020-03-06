@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Photo;
 use App\Article;
+use App\Project;
 
 class AdminController extends Controller
 {
@@ -16,15 +17,6 @@ class AdminController extends Controller
     public function dashboard()
     {
         return view('admin.dashboard');
-    }
-
-    public function photos(){
-
-        $photos = Photo::where('imageable_type', null)->get();
-
-        return view('admin.photos')->with([
-            'photos' => $photos
-        ]);
     }
 
     public function newPhoto(){
@@ -42,5 +34,23 @@ class AdminController extends Controller
 
     public function newNew(){
         return view('admin.newNew');
+    }
+
+    public function projects(){
+
+        $projects = Project::all();
+
+        return view('admin.projects')->with([
+            'projects' => $projects
+        ]);
+    }
+
+    public function project($id){
+
+        $project = Project::with('photos')->find($id);
+
+        return view('admin.project')->with([
+            'project' => $project
+        ]);
     }
 }

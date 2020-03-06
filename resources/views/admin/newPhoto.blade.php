@@ -37,6 +37,7 @@
                         </div>
                     @endforeach
                 @endif
+                <input type="hidden" value="{{ Request()->project_id }}" name="project_id" id="project_id">
                 <button type="submit" class="btn btn-success btn-block float-right" id="submit">Publicar</button>
             </form>
         </div>

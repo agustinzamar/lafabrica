@@ -37,6 +37,8 @@ class PhotosController extends Controller
         ]);
 
         $photo->description = $request->input('description');
+        $photo->imageable_id = $request->input('project_id');
+        $photo->imageable_type = 'App\Project';
 
         $file = $request->file('photo');
         $name = \Str::random(90).now()->format('U').'.'.$file->extension();
