@@ -113,6 +113,7 @@
 	</footer>
     <script src="{{asset('js/header.js')}}"></script>
     <script src="{{asset('js/header2.js')}}"></script>
+    <script src="{{asset('js/gallery.js')}}"></script>
 
 </body>
 </html>

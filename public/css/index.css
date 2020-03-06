@@ -220,13 +220,14 @@
 	text-align: left;
 }
 
-.section3 .item .texto a{
+.section3 .item .texto a, .enviar{
 
 	font-size: var(--parrafoTres);
 	padding: 15px 30px;
 	border-radius: var(--borderRadius);
 	color: #000;
 	transition: var(--transicion);
+	background: none;
 }
 
 .section3 .item .texto .saberMas1{
@@ -235,7 +236,7 @@
 	color: var(--verde);
 }
 
-.section3 .item .texto .saberMas2{
+.section3 .item .texto .saberMas2, .enviar{
 
 	border: 1px solid var(--rosado);
 	color: var(--rosado);
@@ -315,8 +316,6 @@
 	-ms-align-items: center;
 	align-items: center;
 	justify-content: center;
-
-
 }
 
 .section4 .contacto .formulario input,
@@ -329,16 +328,68 @@
 	border: none;
 	outline: none;
 	resize: none;
-	padding: 20px 0px;
+	padding: 30px 0px;
 	color: #000;
 	font-size: 20px;
 	border-bottom: 2px solid var(--rosado);
+	font-size: 18px;
 }
 
 .section4 .contacto .formulario input{
 
 	margin-bottom: 20px;
 }
+
+.section4 .contacto .enviar{
+
+	margin: 30px 0;
+	font-size: 18px;
+	cursor: pointer;
+	padding: 15px 45px;
+}
+
+.section4 .contacto .enviar:hover{
+
+	background: var(--rosado);
+	color: #FFF;
+}
+
+.section5{
+
+	width: 100%;
+	margin: auto;
+	padding: 50px 0;
+}
+
+.section5 .novedad{
+
+	min-width: 1200px;
+	margin: 0 auto;
+}
+
+.section5 .novedad .card{
+
+	width: 300px;
+}
+
+.section5 .novedad .card img{
+
+	height: 300px;
+	object-fit: cover;
+}
+
+.section5 .novedad .card .tituloNovedad{
+
+	font-size: var(--parrafoCinco);
+	margin: 10px 0;
+}
+
+.section5 .novedad .card .copete{
+
+	font-size: var(--parrafoTres);
+}
+
+
 
 @media screen and (max-width: 425px){
 
