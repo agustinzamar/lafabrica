@@ -141,9 +141,9 @@
 
 			<div class="formulario">
 
-				<input type="email" placeholder="Tu correo (*Campo obligatorio)">
-				<input type="text" placeholder="Tu Nombre (*Campo obligatorio)">
-				<input type="text" placeholder="Tu correo (*Campo obligatorio)">
+				<input type="email" placeholder="Tu correo (*Campo obligatorio)" required>
+				<input type="text" placeholder="Tu Nombre (*Campo obligatorio)" required>
+				<input type="text" placeholder="Asunto">
 				<textarea placeholder="Tu mensaje..."></textarea>
 				<button type="submit" class="enviar">Enviar</button>
 
