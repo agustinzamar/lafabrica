@@ -97,7 +97,7 @@
 
 				<h2>Las Normas que nos Norman</h2>
 				<p>Plataforma para difundir y promover los derechos ciudadanos.</p>
-				<a class="saberMas3" href="{{ route('projects') }}#Normas">Saber mas</a>
+				<a class="saberMas3" href="{{ route('projects') }}#LasNormasQueNosNorman">Saber mas</a>
 
 			</div>
 

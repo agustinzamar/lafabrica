@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Article;
+use App\Project;
 
 class HomeController extends Controller
 {
@@ -48,6 +49,10 @@ class HomeController extends Controller
      */
     public function projects()
     {
-        return view('projects');
+        $projects = Project::with('photos')->get();
+
+        return view('projects')->with([
+            'projects' =>  $projects
+        ]);
     }
 }
