@@ -21,13 +21,13 @@
                         <div class="row text-center p-5">
                             <div class="col-md-6 p-5">
                                 <a href=" {{ route('admin.news') }}" class="d-flex flex-column text-dark text-decoration-none">
-                                    <i class="far fa-newspaper mb-5" style="font-size: 100px"></i>
+                                    <span><i class="far fa-newspaper mb-5" style="font-size: 100px"></i></span>
                                     Noticias
                                 </a>
                             </div>
                             <div class="col-md-6 p-5">
                                 <a href=" {{ route('admin.projects') }} " class="d-flex flex-column text-dark text-decoration-none">
-                                    <i class="far fa-lightbulb mb-5" style="font-size: 100px"></i>
+                                    <span><i class="far fa-lightbulb mb-5" style="font-size: 100px"></i></span>
                                     Proyectos
                                 </a>
                             </div>

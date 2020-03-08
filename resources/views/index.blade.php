@@ -105,34 +105,33 @@
 
 	</section>
 
-	<section class="section5" id="Novedades">
-		
-		<div class="card">
-			
-			<a href="#" class="novedad">
-			
-				<img class="imagenNovedad" src="https://mail-attachment.googleusercontent.com/attachment/u/0/?ui=2&ik=36b2a2fa48&attid=0.3&permmsgid=msg-f:1659728385805497086&th=17088a2c5b91b2fe&view=att&disp=inline&realattid=f_k75a8x0u2&saddbat=ANGjdJ_652i0EE0c5pjgEkVMM5KbXPULagk6H_4dR9NI6WPOfSS7E7_Szy8Bue0XFtXnDfDXWSf981ssCsZ_9KppKuS6nvGC4dATHgHYlBYO3azrd3PmZ5u1u1ICMqAMx6TVZ2l4HKNuqamjBJUs_PNbBnUXYN6dP5O_0Qu9sc5laWIi2FlCbuO3Fogt42Wmbkgk14-xEzl1ynIhZxIpuiGSY2O25If1jAgrm_uWgk8mmD94u87enmscwIH1GEHKAYq44DTBo_iDJTMNU_-uExZCkDDrzrPCn4UK1COqRkpgtGtiR5Irr50Y4hIPRdLe5z3wcuhzPMkucX0k50X_Wfb5Yrsj1Pkn4eBF4x7r822lg7JxI7Zvn0Z6aBbW3ZMoTEe0OhmKHXIu-fr6ZKNwrcdUNJYUBnQUmgdJavZ3l1gQJSadI9YEPq0Y2ofV7QsG9-PPvyQhN7_fVcyMfi-QIlGt8R6HbhJbdGsy6ag53B3dsLH_yrFCU2MtNkofnL944MtYsiCat48RO7mRMEyA78-gakCo1DoYtYJ2qx3NijHBMr50RP1D6tMPc-zjadg4DHA3XajygAv3J_BVs7nwmTcRp08MyLubVlsXh_E8h5Ndsd_V-RN7HLHaNp-YjlY5peYsEZbSzNR_v3A-UkzsZpNmk24xF9Uo1MVK-GIRhegT5kbk5HtihFztdor4st8" alt="portada">
-				<h3 class="tituloNovedad">Manual para la adaptación local de los objetivos de desarollo sostenible.</h3>
-				<p class="copete">Este manual tiene como objetivo central brindar lineamientos y sugerencias metodológicas para la incorporación de los Objetivos de Desarrollo Sostenible (ODS) como herramienta de gestión y planificación en el nivel local.</p>
+    @if ($articles)
 
-			</a>
-		
-		</div>
-	
+    <section class="section5" id="Novedades">
 
-		<div class="card">
-			
-			<a href="#" class="novedad">
-			
-				<img class="imagenNovedad" src="https://mail.google.com/mail/u/0?ui=2&ik=36b2a2fa48&attid=0.2&permmsgid=msg-f:1659728385805497086&th=17088a2c5b91b2fe&view=fimg&realattid=f_k75a8wzd0&disp=thd&attbid=ANGjdJ9hbc8CNoT8Scx5guXmuuRSFiDftQ0vWOfy9dwtWebGwxhm80_9INVywbD2x90QOb2bnEnQOihg057oCkKE1kUHGwawBamgOYQFIhSrLmX8TXdQGpNh7JL4lp8&ats=2524608000000&sz=w1920-h1007" alt="portada">
-				<h3 class="tituloNovedad">Subsidios del Fondo Nacional de las Artes</h3>
-				<p class="">Conoce las lineas de financiamiento del FNA para potenciar la concreción de proyectos artísticos y actividades culturales.</p>
-			
-			</a>
+        @foreach ($articles as $item)
 
-		</div>
+            <div class="card">
+
+                <a href=" {{ route('news', $item->id) }} " class="novedad">
+
+                    <img class="imagenNovedad"
+                         src="{{ $item->photo ? asset($item->photo->path) :  '' }}"
+                         alt="{{ $item->photo ? $item->photo->description :  'Portada' }}">
+                    <h3 class="tituloNovedad">{{ $item->title }}</h3>
+                    <p class="copete">{{ $item->photo ? $item->photo->description :  '' }}</p>
+
+                </a>
+
+            </div>
+
+        @endforeach
 
 	</section>
+
+    @endif
+
+
 
 	<section class="section4" id="Contacto">
 
@@ -141,13 +140,13 @@
 			<p>Formulario de Contacto</p>
 
 			<div class="formulario">
-			
-				<input type="text" placeholder="Tu correo (*Campo obligatorio)">
+
+				<input type="email" placeholder="Tu correo (*Campo obligatorio)">
 				<input type="text" placeholder="Tu Nombre (*Campo obligatorio)">
 				<input type="text" placeholder="Tu correo (*Campo obligatorio)">
-				<textarea placeholder="Tsu mensaje..."></textarea>
+				<textarea placeholder="Tu mensaje..."></textarea>
 				<button type="submit" class="enviar">Enviar</button>
-			
+
 			</div>
 
 		</div>

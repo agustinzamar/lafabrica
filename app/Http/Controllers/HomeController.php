@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Article;
 
 class HomeController extends Controller
 {
@@ -12,7 +13,9 @@ class HomeController extends Controller
      * @return void
      */
     public function __construct()
-    { }
+    {
+
+    }
 
     /**
      * Show the application dashboard.
@@ -21,47 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
-    }
+        $articles = Article::with('photo')->get();
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function galeria()
-    {
-        return view('gallery');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function jujuyLab()
-    {
-        return view('jujuylab');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function cultivar()
-    {
-        return view('cultivar');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function normas()
-    {
-        return view('normas');
+        return view('index')->with([
+            'articles' => $articles
+        ]);
     }
 
     /**
