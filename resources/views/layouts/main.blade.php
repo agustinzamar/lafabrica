@@ -40,7 +40,7 @@
 			<a href="#Nosotros"><li><span>Sobre Nosotros</span></li></a>
 			<a href="#ComoTrabajamos"><li><span>¿Cómo Trabajamos?</span></li></a>
 			<a href="#QueHacemos"><li><span>¿Qué Hacemos?</span></li></a>
-			<!-- <a href="#Novedades"><li><span>Novedades</span></li></a> -->
+			<a href="#Novedades"><li><span>Novedades</span></li></a>
 			<a href="#Contacto"><li><span>Contacto</span></li></a>
 
 
@@ -75,7 +75,7 @@
 				<a href="#Nosotros"><li><span>Sobre Nosotros</span></li></a>
 				<a href="#ComoTrabajamos"><li><span>¿Como Trabajamos?</span></li></a>
 				<a href="#QueHacemos"><li><span>¿Que Hacemos?</span></li></a>
-				<!-- <a href="#Novedades"><li><span>Novedades</span></li></a> -->
+				<a href="#Novedades"><li><span>Novedades</span></li></a>
 				<a href="#Contacto"><li><span>Contacto</span></li></a>
 
 			</ul>

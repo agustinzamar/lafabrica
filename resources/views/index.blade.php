@@ -7,6 +7,7 @@
 @section('title', 'Inicio')
 
 @section('main')
+
 	<div class="portada">
 
 		<h1> #ConstruyendoCiudadania </h1>
@@ -109,29 +110,35 @@
 
     <section class="section5" id="Novedades">
 
-        @foreach ($articles as $item)
+		<p>Novedades</p>
 
-            <div class="card">
+		<div class="novedades">
 
-                <a href=" {{ route('news', $item->id) }} " class="novedad">
+	        @foreach ($articles as $item)
 
-                    <img class="imagenNovedad"
-                         src="{{ $item->photo ? asset($item->photo->path) :  '' }}"
-                         alt="{{ $item->photo ? $item->photo->description :  'Portada' }}">
-                    <h3 class="tituloNovedad">{{ $item->title }}</h3>
-                    <p class="copete">{{ $item->photo ? $item->photo->description :  '' }}</p>
+	            <div class="card">
 
-                </a>
+	                <a href=" {{ route('news', $item->id) }} " class="novedad">
 
-            </div>
+	                    <img class="imagenNovedad"
+	                         src="{{ $item->photo ? asset($item->photo->path) :  '' }}"
+	                         alt="{{ $item->photo ? $item->photo->description :  'Portada' }}">
+	                    <h3 class="tituloNovedad">{{ $item->title }}</h3>
+	                    <p class="copete">{{ $item->photo ? $item->photo->description :  '' }}</p>
 
-        @endforeach
+	                </a>
+
+	            </div>
+
+	        @endforeach
+		
+		</div>
+
+		<a href="#" class="enviar">Todas las noticias</a>
 
 	</section>
 
     @endif
-
-
 
 	<section class="section4" id="Contacto">
 
@@ -152,4 +159,5 @@
 		</div>
 
 	</section>
+
 @endsection

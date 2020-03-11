@@ -62,7 +62,7 @@
 	color: var(--rosado)
 }
 
-.section2 p, .section3 p{
+.section2 p, .section3 p, .section5 p{
 
 	font-size: var(--parrafoSiete);
 	font-weight: 900;
@@ -298,7 +298,7 @@
 	font-weight: 900;
 	color: #535354;
 	text-align: center;
-	margin-bottom: 50px;
+	margin: 50px 0;
 }
 
 .section4 .contacto .formulario{
@@ -356,40 +356,63 @@
 
 .section5{
 
+	background: #f8fafd;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+
+	-ms-align-items: center;
+	align-items: center;
+	padding: 100px 0;
+}
+
+.novedades{
+
 	width: 100%;
-	margin: auto;
-	padding: 50px 0;
+	max-width: 1300px;
+	padding: 100px 0;
+	display: grid;
+	grid-template-columns: minmax(300px, 350px) minmax(300px, 350px) minmax(300px, 350px);
+	justify-content: space-between;
 }
 
-.section5 .novedad{
+.novedades .card .novedad img{
 
-	min-width: 1200px;
-	margin: 0 auto;
-}
-
-.section5 .novedad .card{
-
-	width: 300px;
-}
-
-.section5 .novedad .card img{
-
-	height: 300px;
+	height: 200px;
+	width: 100%;
 	object-fit: cover;
 }
 
-.section5 .novedad .card .tituloNovedad{
+.novedades .card .novedad .tituloNovedad{
 
-	font-size: var(--parrafoCinco);
-	margin: 10px 0;
+	font-size: var(--parrafoCuatro);
+	color: #535354;
+	margin: 15px 0;
+	text-align: left;
+	font-weight: 700;
 }
 
-.section5 .novedad .card .copete{
+.novedades .card .novedad .copete{
 
-	font-size: var(--parrafoTres);
+	color: #535354;
+	font-size: var(--parrafoDos);
+	text-align: left;
+	font-weight: normal;
+	line-height: 24px;
 }
 
+.section5 .enviar:hover{
 
+	background: var(--rosado);
+	color: #fff;
+}
 
 @media screen and (max-width: 425px){
 
