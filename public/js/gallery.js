@@ -1,66 +1,64 @@
-const gallery = document.querySelector('.gallery').children;
-const prev = document.querySelector('.prev');
-const next = document.querySelector('.next');
-const maxItems = 3;
-const pagintation = Math.ceil(gallery.length/maxItems);
+/* Slider */
 
-let index = 1;
+/*Funcion apra avanzar en el slider */
+function next(sender){
 
-prev.addEventListener('click', function prev(){
+    const slider = sender.parentElement.parentElement.children[0];
+    slider.scrollTo(slider.scrollLeft + slider.clientWidth, 0);
+    const dotsList = slider.parentElement.children[1].children[2];
 
-	index--;
-	check();
-	showItems();
-});
+    const index = Math.round(slider.scrollLeft/slider.clientWidth) + 1;
+    const maxIndex = dotsList.children.length-1;
 
-next.addEventListener('click', function next(){
+    /* verifica que el indice no sobrepase el maximo de nodos */
+    if(index <= maxIndex){
+      Array.from(dotsList.children).forEach(x => {
+        x.classList.remove('active');
+      })
 
-	index++;
-	check();
-	showItems();
-});
+      dotsList.children[index].classList.add('active');
+    }
+  }
 
-function check(){
+/*Funcion apra retroceder en el slider */
+function prev(sender){
 
-	if (index == pagintation) {
+    const slider = sender.parentElement.parentElement.children[0];
+    slider.scrollTo(slider.scrollLeft - slider.clientWidth, 0);
+    const dotsList = slider.parentElement.children[1].children[2];
 
-		next.classList.add('disabled');
-	}
+    const index = Math.round(slider.scrollLeft/slider.clientWidth) - 1;
 
-	else{
+    /* verifica que el indice no sea inferior al primer nodo */
+    if(index >= 0){
+      Array.from(dotsList.children).forEach(x => {
+        x.classList.remove('active');
+      })
 
-		next.classList.remove('disabled');
-	}
+      dotsList.children[index].classList.add('active');
+    }
+  }
 
-	if (index == 1) {
 
-		prev.classList.add('disabled');
-	}
+  /* funcion para agregar los circulos indicadores del segun la cantidad de fotos que hay */
+  document.addEventListener('DOMContentLoaded', () => {
 
-	else{
+    const sliders = document.querySelectorAll('.slider');
 
-		prev.classList.remove('disabled');
-	}
-}
+    sliders.forEach(slider => {
 
-function showItems(){
+        const dotsList = slider.children[1].children[2];
+        const totalItems = slider.children[0].children.length;
 
-	for(let i = 0; i<gallery.length; i++){
+        for (let index = 0; index < totalItems; index++) {
+            if(index === 0){
+                dotsList.innerHTML += `<li class="dot active"></li>`
+            }else{
+                dotsList.innerHTML += `<li class="dot"></li>`
+            }
+        }
 
-		gallery[i].classList.remove('show');
-		gallery[i].classList.add('hide');
+    })
 
-		if(i>=(index*maxItems)-maxItems && i<index*maxItems){
+  })
 
-			gallery[i].classList.remove('hide');
-			gallery[i].classList.add('show');
-		}
-	}
-
-}
-
-window.onload = function(){
-
-	showItems();
-	check();
-};

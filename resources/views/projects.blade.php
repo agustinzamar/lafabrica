@@ -40,22 +40,24 @@
 
                     @if (count($item->photos) > 0 )
 
-                        <div class="gallery">
+                        <div class="slider" >
 
-                            @foreach ($item->photos as $photo)
-                                <div class="gallery__item">
+                            <div class="contenedor">
 
-                                    <img src="{{ $photo->path }}" alt="{{ $photo->description }}">
+                                @foreach ($item->photos as $photo)
+                                    <div class="slide">
+                                        <img src="{{ $photo->path }}" alt="{{ $photo->description }}">
+                                    </div>
+                                @endforeach
 
-                                </div>
-                            @endforeach
+                            </div>
 
-                        </div>
-
-                        <div class="arrows">
-
-                            <input type="button" class="prev" id="previous" value="<" />
-                            <input type="button" class="next" id="next" value=">" />
+                            <div class="controles">
+                                <span onclick="prev(this)" class="anterior"><i class="fas fa-chevron-left"></i></span>
+                                <span onclick="next(this)" class="siguiente"><i class="fas fa-chevron-right"></i></span>
+                                <ul class="dots">
+                                </ul>
+                            </div>
 
                         </div>
 
