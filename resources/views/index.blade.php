@@ -106,7 +106,7 @@
 
 	</section>
 
-    @if ($articles)
+    @if (isset($articles))
 
     <section class="section5" id="Novedades">
 
@@ -118,7 +118,7 @@
 
 	            <div class="card">
 
-	                <a href=" {{ route('news', $item->id) }} " class="novedad">
+	                <a href=" {{ route('new', $item->id) }} " class="novedad">
 
 	                    <img class="imagenNovedad"
 	                         src="{{ $item->photo ? asset($item->photo->path) :  '' }}"
@@ -131,7 +131,7 @@
 	            </div>
 
 	        @endforeach
-		
+
 		</div>
 
 		<a href="#" class="enviar">Todas las noticias</a>
