@@ -1,0 +1,43 @@
+.noticias{
+
+	background: #f8fafd;
+	padding: 100px 0;
+
+}
+
+.gridNoticias{
+
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 300px);
+	justify-content: space-around;
+	-ms-align-items: center;
+	align-items: center;
+	grid-gap: 50px;
+	margin: 0 	auto;
+	max-width: 1300px;
+}
+
+.card .novedad img{
+
+	height: 200px;
+	width: 100%;
+	object-fit: cover;
+}
+
+.card .novedad .tituloNovedad{
+
+	font-size: var(--parrafoCuatro);
+	color: #535354;
+	margin: 15px 0;
+	text-align: left;
+	font-weight: 700;
+}
+
+.card .novedad .copete{
+
+	color: #535354;
+	font-size: var(--parrafoDos);
+	text-align: left;
+	font-weight: normal;
+	line-height: 24px;
+}
