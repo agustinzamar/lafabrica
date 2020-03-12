@@ -54,9 +54,13 @@ class HomeController extends Controller
    {
        $article = Article::with('photo')->find($id);
 
-       return view('new')->with([
-           'article' => $article
-       ]);
+       if(isset($article)){
+            return view('new')->with([
+                'article' => $article
+            ]);
+       }
+
+       return abort(404);
    }
 
     /**

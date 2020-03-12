@@ -10,273 +10,34 @@
 
 <div class="noticias">
 
-    <div class="gridNoticias">
+    @if (count($articles) > 0)
 
-        <div class="card">
+        <div class="gridNoticias">
 
-            <a href="#" class="novedad">
+            @foreach ($articles as $new)
+                <div class="card">
 
-                <img class="imagenNovedad" src="https://pa1.narvii.com/6186/d9803f6ddf7e8343d65bc6bd25b01664dbe9eba4_00.gif" alt="">
-                <h3 class="tituloNovedad">Titulo 1</h3>
-                <p class="copete">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet, fuga debitis amet inventore blanditiis cupiditate obcaecati ipsa iusto cumque?</p>
+                    <a href="{{ route('new', $new->id) }}" class="novedad">
 
-            </a>
+                        <img class="imagenNovedad" src="{{ $new->photo ? asset($new->photo->path) : '' }}" alt="">
+                        <h3 class="tituloNovedad"> {{ $new->title }} </h3>
+                        <p class="copete">
+                            {!! Str::limit($new->body, 200) !!}
+                        </p>
+                    </a>
 
-        </div>
-
-        <div class="card">
-
-            <a href="#" class="novedad">
-
-                <img class="imagenNovedad" src="https://pa1.narvii.com/6186/d9803f6ddf7e8343d65bc6bd25b01664dbe9eba4_00.gif" alt="">
-                <h3 class="tituloNovedad">Titulo 1</h3>
-                <p class="copete">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet, fuga debitis amet inventore blanditiis cupiditate obcaecati ipsa iusto cumque?</p>
-
-            </a>
+                </div>
+            @endforeach
 
         </div>
 
-        <div class="card">
-
-            <a href="#" class="novedad">
-
-                <img class="imagenNovedad" src="https://www.aiohotgirl.com/assets/aHR0cHM6Ly-oZW50YWlwb3Jucy5uZXQvd3AtY9-udGVudC-1cGxvYWRzLzIwMTgvMDEvNzA5MzQ3Mi04LmpwZw==.jpg" alt="">
-                <h3 class="tituloNovedad">Titulo 1</h3>
-                <p class="copete">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet, fuga debitis amet inventore blanditiis cupiditate obcaecati ipsa iusto cumque?</p>
-
-            </a>
-
+    @else
+        <div class="nothing">
+            <h2>Aún no hay nada aqui</h2>
         </div>
+    @endif
 
-        <div class="card">
 
-            <a href="#" class="novedad">
-
-                <img class="imagenNovedad" src="https://pa1.narvii.com/6186/d9803f6ddf7e8343d65bc6bd25b01664dbe9eba4_00.gif" alt="">
-                <h3 class="tituloNovedad">Titulo 1</h3>
-                <p class="copete">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet, fuga debitis amet inventore blanditiis cupiditate obcaecati ipsa iusto cumque?</p>
-
-            </a>
-
-        </div>
-
-        <div class="card">
-
-            <a href="#" class="novedad">
-
-                <img class="imagenNovedad" src="https://pa1.narvii.com/6186/d9803f6ddf7e8343d65bc6bd25b01664dbe9eba4_00.gif" alt="">
-                <h3 class="tituloNovedad">Titulo 1</h3>
-                <p class="copete">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet, fuga debitis amet inventore blanditiis cupiditate obcaecati ipsa iusto cumque?</p>
-
-            </a>
-
-        </div>
-
-        <div class="card">
-
-            <a href="#" class="novedad">
-
-                <img class="imagenNovedad" src="https://pa1.narvii.com/6186/d9803f6ddf7e8343d65bc6bd25b01664dbe9eba4_00.gif" alt="">
-                <h3 class="tituloNovedad">Titulo 1</h3>
-                <p class="copete">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet, fuga debitis amet inventore blanditiis cupiditate obcaecati ipsa iusto cumque?</p>
-
-            </a>
-
-        </div>
-
-        <div class="card">
-
-            <a href="#" class="novedad">
-
-                <img class="imagenNovedad" src="https://pa1.narvii.com/6186/d9803f6ddf7e8343d65bc6bd25b01664dbe9eba4_00.gif" alt="">
-                <h3 class="tituloNovedad">Titulo 1</h3>
-                <p class="copete">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet, fuga debitis amet inventore blanditiis cupiditate obcaecati ipsa iusto cumque?</p>
-
-            </a>
-
-        </div>
-
-        <div class="card">
-
-            <a href="#" class="novedad">
-
-                <img class="imagenNovedad" src="https://pa1.narvii.com/6186/d9803f6ddf7e8343d65bc6bd25b01664dbe9eba4_00.gif" alt="">
-                <h3 class="tituloNovedad">Titulo 1</h3>
-                <p class="copete">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet, fuga debitis amet inventore blanditiis cupiditate obcaecati ipsa iusto cumque?</p>
-
-            </a>
-
-        </div>
-
-        <div class="card">
-
-            <a href="#" class="novedad">
-
-                <img class="imagenNovedad" src="https://pa1.narvii.com/6186/d9803f6ddf7e8343d65bc6bd25b01664dbe9eba4_00.gif" alt="">
-                <h3 class="tituloNovedad">Titulo 1</h3>
-                <p class="copete">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet, fuga debitis amet inventore blanditiis cupiditate obcaecati ipsa iusto cumque?</p>
-
-            </a>
-
-        </div>
-
-        <div class="card">
-
-            <a href="#" class="novedad">
-
-                <img class="imagenNovedad" src="https://pa1.narvii.com/6186/d9803f6ddf7e8343d65bc6bd25b01664dbe9eba4_00.gif" alt="">
-                <h3 class="tituloNovedad">Titulo 1</h3>
-                <p class="copete">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet, fuga debitis amet inventore blanditiis cupiditate obcaecati ipsa iusto cumque?</p>
-
-            </a>
-
-        </div>
-
-        <div class="card">
-
-            <a href="#" class="novedad">
-
-                <img class="imagenNovedad" src="https://pa1.narvii.com/6186/d9803f6ddf7e8343d65bc6bd25b01664dbe9eba4_00.gif" alt="">
-                <h3 class="tituloNovedad">Titulo 1</h3>
-                <p class="copete">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet, fuga debitis amet inventore blanditiis cupiditate obcaecati ipsa iusto cumque?</p>
-
-            </a>
-
-        </div>
-
-        <div class="card">
-
-            <a href="#" class="novedad">
-
-                <img class="imagenNovedad" src="https://pa1.narvii.com/6186/d9803f6ddf7e8343d65bc6bd25b01664dbe9eba4_00.gif" alt="">
-                <h3 class="tituloNovedad">Titulo 1</h3>
-                <p class="copete">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet, fuga debitis amet inventore blanditiis cupiditate obcaecati ipsa iusto cumque?</p>
-
-            </a>
-
-        </div>
-
-        <div class="card">
-
-            <a href="#" class="novedad">
-
-                <img class="imagenNovedad" src="https://pa1.narvii.com/6186/d9803f6ddf7e8343d65bc6bd25b01664dbe9eba4_00.gif" alt="">
-                <h3 class="tituloNovedad">Titulo 1</h3>
-                <p class="copete">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet, fuga debitis amet inventore blanditiis cupiditate obcaecati ipsa iusto cumque?</p>
-
-            </a>
-
-        </div>
-
-        <div class="card">
-
-            <a href="#" class="novedad">
-
-                <img class="imagenNovedad" src="https://pa1.narvii.com/6186/d9803f6ddf7e8343d65bc6bd25b01664dbe9eba4_00.gif" alt="">
-                <h3 class="tituloNovedad">Titulo 1</h3>
-                <p class="copete">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet, fuga debitis amet inventore blanditiis cupiditate obcaecati ipsa iusto cumque?</p>
-
-            </a>
-
-        </div>
-
-        <div class="card">
-
-            <a href="#" class="novedad">
-
-                <img class="imagenNovedad" src="https://pa1.narvii.com/6186/d9803f6ddf7e8343d65bc6bd25b01664dbe9eba4_00.gif" alt="">
-                <h3 class="tituloNovedad">Titulo 1</h3>
-                <p class="copete">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet, fuga debitis amet inventore blanditiis cupiditate obcaecati ipsa iusto cumque?</p>
-
-            </a>
-
-        </div>
-
-        <div class="card">
-
-            <a href="#" class="novedad">
-
-                <img class="imagenNovedad" src="https://pa1.narvii.com/6186/d9803f6ddf7e8343d65bc6bd25b01664dbe9eba4_00.gif" alt="">
-                <h3 class="tituloNovedad">Titulo 1</h3>
-                <p class="copete">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet, fuga debitis amet inventore blanditiis cupiditate obcaecati ipsa iusto cumque?</p>
-
-            </a>
-
-        </div>
-
-        <div class="card">
-
-            <a href="#" class="novedad">
-
-                <img class="imagenNovedad" src="https://pa1.narvii.com/6186/d9803f6ddf7e8343d65bc6bd25b01664dbe9eba4_00.gif" alt="">
-                <h3 class="tituloNovedad">Titulo 1</h3>
-                <p class="copete">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet, fuga debitis amet inventore blanditiis cupiditate obcaecati ipsa iusto cumque?</p>
-
-            </a>
-
-        </div>
-
-        <div class="card">
-
-            <a href="#" class="novedad">
-
-                <img class="imagenNovedad" src="https://pa1.narvii.com/6186/d9803f6ddf7e8343d65bc6bd25b01664dbe9eba4_00.gif" alt="">
-                <h3 class="tituloNovedad">Titulo 1</h3>
-                <p class="copete">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet, fuga debitis amet inventore blanditiis cupiditate obcaecati ipsa iusto cumque?</p>
-
-            </a>
-
-        </div>
-
-        <div class="card">
-
-            <a href="#" class="novedad">
-
-                <img class="imagenNovedad" src="https://pa1.narvii.com/6186/d9803f6ddf7e8343d65bc6bd25b01664dbe9eba4_00.gif" alt="">
-                <h3 class="tituloNovedad">Titulo 1</h3>
-                <p class="copete">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet, fuga debitis amet inventore blanditiis cupiditate obcaecati ipsa iusto cumque?</p>
-
-            </a>
-
-        </div>
-
-        <div class="card">
-
-            <a href="#" class="novedad">
-
-                <img class="imagenNovedad" src="https://pa1.narvii.com/6186/d9803f6ddf7e8343d65bc6bd25b01664dbe9eba4_00.gif" alt="">
-                <h3 class="tituloNovedad">Titulo 1</h3>
-                <p class="copete">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet, fuga debitis amet inventore blanditiis cupiditate obcaecati ipsa iusto cumque?</p>
-
-            </a>
-
-        </div>
-
-        <div class="card">
-
-            <a href="#" class="novedad">
-
-                <img class="imagenNovedad" src="https://pa1.narvii.com/6186/d9803f6ddf7e8343d65bc6bd25b01664dbe9eba4_00.gif" alt="">
-                <h3 class="tituloNovedad">Titulo 1</h3>
-                <p class="copete">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet, fuga debitis amet inventore blanditiis cupiditate obcaecati ipsa iusto cumque?</p>
-
-            </a>
-
-        </div>
-
-        <div class="card">
-
-            <a href="#" class="novedad">
-
-                <img class="imagenNovedad" src="https://pa1.narvii.com/6186/d9803f6ddf7e8343d65bc6bd25b01664dbe9eba4_00.gif" alt="">
-                <h3 class="tituloNovedad">Titulo 1</h3>
-                <p class="copete">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet, fuga debitis amet inventore blanditiis cupiditate obcaecati ipsa iusto cumque?</p>
-
-            </a>
-
-        </div>
-
-    </div>
 
 </div>
 

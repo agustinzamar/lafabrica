@@ -25,7 +25,7 @@ class AdminController extends Controller
 
     public function news(){
 
-        $news = Article::with('photo')->get();
+        $news = Article::with('photo')->latest()->get();
 
         return view('admin.news')->with([
             'news' => $news
