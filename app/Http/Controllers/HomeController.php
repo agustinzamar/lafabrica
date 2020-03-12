@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $articles = Article::with('photo')->get();
+        $articles = Article::with('photo')->latest()->limit(3)->get();
 
         return view('index')->with([
             'articles' => $articles
@@ -39,8 +39,25 @@ class HomeController extends Controller
      */
     public function news()
     {
-        return view('news');
+        $articles = Article::with('photo')->latest()->get();
+
+        return view('news')->with([
+            'articles' => $articles
+        ]);
     }
+
+    /* Show the application dashboard.
+    *
+    * @return \Illuminate\Contracts\Support\Renderable
+    */
+   public function new($id)
+   {
+       $article = Article::with('photo')->find($id);
+
+       return view('new')->with([
+           'article' => $article
+       ]);
+   }
 
     /**
      * Show the application dashboard.
