@@ -134,7 +134,7 @@
 
 		</div>
 
-		<a href="#" class="enviar">Todas las noticias</a>
+        <a href="{{ route('news') }}" class="enviar">Todas las noticias</a>
 
 	</section>
 
