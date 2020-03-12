@@ -92,7 +92,7 @@
 
 @keyframes float {
 	0% {
-	
+
 		transform: translatey(0px);
 	}
 	50% {
@@ -103,31 +103,6 @@
 
 		transform: translatey(0px);
 	}
-}
-
-.gallery{
-
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-	grid-column-gap: 50px
-}
-
-.gallery .gallery__item{
-
-	height: 90px;
-}
-
-.gallery .hide{
-
-	display: none;
-}
-
-.gallery .show{
-
-	display: block;
-	-webkit-animation: show .5s ease;
-	-o-animation: show .5s ease;
-	animation: show .5s ease;
 }
 
 @keyframes show{
@@ -145,25 +120,118 @@
 	}
 }
 
-.gallery .gallery__item img{
-
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+.slider{
+    height: 100%;
+    max-height: 300px;
+    width: 100%;
+    position: relative;
 }
 
-.prev, .next {
-
-	border: none;
-	background: none;
-	width: 40px;
-	height: 40px;
-	font-size: 24px;
-	cursor:pointer;
+.slider .contenedor{
+    height: 100%;
+    max-width: 100%;
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    position: relative;
 }
 
-.disabled{
+.slider .slide{
+    min-width: 100%;
+    height: 300px;
+    display: flex;
+}
 
-	color: grey;
-	pointer-events: none;
+.slider .slide img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.slider .controles{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slider .controles span#like{
+    color: #000;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: all linear .2s;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.slider .controles span#like path{
+    stroke: white;
+    stroke-width: 30px;
+}
+
+.slider .controles span#like.active{
+    color: rgb(236, 78, 78);
+}
+
+.slider .controles span#label{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    background-color: rgb(146, 60, 185);
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+}
+
+.slider .controles span.anterior,
+.slider .controles span.siguiente{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: rgba(255,255,255, .7);
+    cursor: pointer;
+    transition: all linear .2s;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,.3);
+}
+
+.slider .controles span.anterior:hover,
+.slider .controles span.siguiente:hover{
+    color: rgba(255,255,255, 1);
+    background-color: rgba(0,0,0,.7);
+}
+
+.slider .controles span.anterior{
+    left: 10px;
+}
+
+.slider .controles span.siguiente{
+    right: 10px;
+}
+
+.slider .controles .dots{
+    list-style-type: none;
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider .controles .dots .dot{
+    margin-right: 1%;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255,255,255, .6);
+    border-radius: 50%;
+}
+
+.slider .controles .dots .dot.active{
+    background-color: rgba(255,255,255, 1);
 }
