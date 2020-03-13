@@ -38,30 +38,26 @@
                         {!! $item->description !!}
                     </p>
 
-                    @if (count($item->photos) > 0 )
+                    <div class="slider" >
 
-                        <div class="slider" >
-
-                            <div class="contenedor">
-
+                        <div class="contenedor">
+                            @if (count($item->photos) > 0 )
                                 @foreach ($item->photos as $photo)
                                     <div class="slide">
                                         <img src="{{ $photo->path }}" alt="{{ $photo->description }}">
                                     </div>
                                 @endforeach
-
-                            </div>
-
-                            <div class="controles">
-                                <span onclick="prev(this)" class="anterior"><i class="fas fa-chevron-left"></i></span>
-                                <span onclick="next(this)" class="siguiente"><i class="fas fa-chevron-right"></i></span>
-                                <ul class="dots">
-                                </ul>
-                            </div>
-
+                            @endif
                         </div>
 
-                    @endif
+                        <div class="controles">
+                            <span onclick="prev(this)" class="anterior"><i class="fas fa-chevron-left"></i></span>
+                            <span onclick="next(this)" class="siguiente"><i class="fas fa-chevron-right"></i></span>
+                            <ul class="dots">
+                            </ul>
+                        </div>
+
+                    </div>
 
                 </div>
 
