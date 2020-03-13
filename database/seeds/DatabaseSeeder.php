@@ -11,12 +11,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Eloquent::unguard();
-        if(App::environment() == 'production'){
-            $this->call(UsersTableSeeder::class);
-            $this->call(ProjectsTableSeeder::class);
-        }
 
+        $this->call(UsersTableSeeder::class);
+        $this->call(ProjectsTableSeeder::class);
         $this->call(PhotosTableSeeder::class);
         $this->call(NewsTableSeeder::class);
     }
