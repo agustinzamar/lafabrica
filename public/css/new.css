@@ -16,6 +16,7 @@
 	max-width: 900px;
 	width: 90%;
 	margin: 0 auto;
+	padding: 0 0 100px 0;
 }
 
 .contenedor__titulo, .contenedor__copete, .contenedor__texto{
@@ -45,4 +46,17 @@ p{
 br{
 
 	margin: 5px 0;
+}
+
+@media screen and (max-width: 700px){
+
+	.portada{
+
+		height: 300px;
+	}
+	
+	.contenedor__titulo{
+
+		font-size: var(--parrafoCuatro);
+	}
 }
