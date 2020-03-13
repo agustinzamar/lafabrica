@@ -159,13 +159,6 @@
 	margin: auto;
 	/*position: relative;*/
 }
-/*
-.section3 .wave{
-
-	position: absolute;
-	width: 100%;
-	top: -70px;
-}*/
 
 .section3 p{
 
@@ -271,6 +264,11 @@
 	-ms-align-items: flex-end;
 	align-items: flex-end;
 	text-align: right !important;
+}
+
+.section3 .item .ocultar{
+
+	display: none;
 }
 
 .section4{
@@ -379,8 +377,9 @@
 	max-width: 1300px;
 	padding: 100px 0;
 	display: grid;
-	grid-template-columns: minmax(300px, 350px) minmax(300px, 350px) minmax(300px, 350px);
-	justify-content: space-between;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 320px));;
+	justify-content: space-around;
+	grid-gap: 50px;
 }
 
 .novedades .card .novedad img{
@@ -455,6 +454,11 @@
 
 		padding: 0 0 50px 0;
 	}
+
+	.novedades{
+
+		grid-template-columns: repeat(auto-fill, 300px);;
+	}
 }
 
 @media screen and (max-width: 767px){
@@ -463,37 +467,14 @@
 
 		width: 100%;
 		grid-template-columns: 1fr;
+		height: 100%;
 	}
 
-	.section3 .item:nth-child(2){
-	
-		background:-webkit-linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/cultivar.jpg);
-		background:-o-linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/cultivar.jpg);
-		background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/cultivar.jpg);
-		background-size:cover;
-		background-position:center;
-		background-repeat:no-repeat;
-	}
+	.section3 .item img{
 
-	.section3 .item:nth-child(3){
-	
-		background:-webkit-linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/lab.jpg);
-		background:-o-linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/lab.jpg);
-		background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/lab.jpg);
-		background-size:cover;
-		background-position:center;
-		background-repeat:no-repeat;
-/*		margin: 50px 0;*/
-	}
-
-	.section3 .item:nth-child(4){
-	
-		background:-webkit-linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/normas.jpg);
-		background:-o-linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/normas.jpg);
-		background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/normas.jpg);
-		background-size:cover;
-		background-position:center;
-		background-repeat:no-repeat;
+		height: 200px;
+		width: 100%;
+		object-fit: contain;
 	}
 
 	.section3 .item .texto{
@@ -517,10 +498,15 @@
 		border: 1px solid #fff;
 	}
 
-	.section3 .ocultar{
+	.section3 .item .ocultar{
+
+		display: block;
+	}
+
+	.section3 .item .mostrar{
 
 		display: none;
-	}
+	}	
 }
 
 @media (min-width: 426px) and (max-width: 800px){
@@ -564,4 +550,5 @@
 		-ms-align-items: center;
 		align-items: center;
 	}
+
 }
