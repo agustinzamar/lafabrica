@@ -64,7 +64,7 @@
 
 		<div class="cultivar item">
 
-			<img class="ocultar" src="{{ asset('img/cultivar.png') }}" alt="DefinirAlternativo">
+			<img src="{{ asset('img/cultivar.png') }}" alt="DefinirAlternativo">
 
 			<div class="texto">
 
@@ -78,6 +78,8 @@
 
 		<div class="jujuyLab item">
 
+			<img class="ocultar" src="{{ asset('img/lab.png') }}" alt="DefinirAlternativo">
+
 			<div class="texto right">
 
 				<h2>LabJujuy</h2>
@@ -86,13 +88,13 @@
 
 			</div>
 
-			<img class="ocultar" src="{{ asset('img/lab.png') }}" alt="DefinirAlternativo">
+			<img class="mostrar" src="{{ asset('img/lab.png') }}" alt="DefinirAlternativo">
 
 		</div>
 
 		<div class="normas item">
 
-			<img class="ocultar" src="{{ asset('img/normas.png') }}" alt="DefinirAlternativo">
+			<img src="{{ asset('img/normas.png') }}" alt="DefinirAlternativo">
 
 			<div class="texto">
 
