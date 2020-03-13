@@ -380,6 +380,7 @@
 	grid-template-columns: repeat(auto-fill, minmax(300px, 320px));;
 	justify-content: space-around;
 	grid-gap: 50px;
+	word-wrap: break-word;
 }
 
 .novedades .card .novedad img{
@@ -396,6 +397,7 @@
 	margin: 15px 0;
 	text-align: left;
 	font-weight: 700;
+	word-wrap: break-word;
 }
 
 .novedades .card .novedad .copete{
@@ -405,6 +407,7 @@
 	text-align: left;
 	font-weight: normal;
 	line-height: 24px;
+	word-wrap: break-word;
 }
 
 .section5 .enviar:hover{
