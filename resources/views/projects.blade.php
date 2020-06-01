@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('styles')
-    <link href="{{ asset('css/contenido.css') }}" rel="stylesheet" />
+<link href="{{ mix('css/contenido.css') }}" rel="stylesheet" />
 @endsection
 
 @section('title', 'Proyectos')
@@ -10,13 +10,13 @@
 
 <div class="proyectos">
 
-	<div class="imagenes">
+    <div class="imagenes">
 
-		<img src="{{ asset('img/cultivar.png') }}" alt="DefinirAlternativo">
-		<img src="{{ asset('img/lab.png') }}" alt="DefinirAlternativo">
-		<img src="{{ asset('img/normas.png') }}" alt="DefinirAlternativo">
+        <img src="{{ asset('img/cultivar.png') }}" alt="DefinirAlternativo">
+        <img src="{{ asset('img/lab.png') }}" alt="DefinirAlternativo">
+        <img src="{{ asset('img/normas.png') }}" alt="DefinirAlternativo">
 
-	</div>
+    </div>
 
 </div>
 
@@ -24,20 +24,21 @@
 
     @if ($projects)
 
-        @foreach ($projects as $item)
+    @foreach ($projects as $item)
 
-            <div class="contenedor__item" id="{{ $item->slug }}">
+    <div class="contenedor__item" id="{{ $item->slug }}">
 
-                <img class="item__imagen" src="{{ asset('img/'.$item->main_picture) }}" alt="Logo del proyecto">
+        <img class="item__imagen" src="{{ asset('img/'.$item->main_picture) }}" alt="Logo del proyecto">
 
-                <div class="item__texto">
+        <div class="item__texto">
 
-                    <h1 class="item__titulo titulo3">{{ $item->name }}</h1>
+            <h1 class="item__titulo titulo3">{{ $item->name }}</h1>
 
-                    <p class="item__parrafo">
-                        {!! $item->description !!}
-                    </p>
+            <p class="item__parrafo">
+                {!! $item->description !!}
+            </p>
 
+<<<<<<< HEAD
                     <div class="slider" >
 
                         <div class="contenedor">
@@ -58,12 +59,38 @@
                         </div>
 
                     </div>
+=======
+            @if (count($item->photos) > 0 )
 
+            <div class="slider">
+
+                <div class="contenedor">
+
+                    @foreach ($item->photos as $photo)
+                    <div class="slide">
+                        <img src="{{ $photo->path }}" alt="{{ $photo->description }}">
+                    </div>
+                    @endforeach
+
+                </div>
+
+                <div class="controles">
+                    <span onclick="prev(this)" class="anterior"><i class="fas fa-chevron-left"></i></span>
+                    <span onclick="next(this)" class="siguiente"><i class="fas fa-chevron-right"></i></span>
+                    <ul class="dots">
+                    </ul>
                 </div>
 
             </div>
 
-        @endforeach
+            @endif
+>>>>>>> dev
+
+        </div>
+
+    </div>
+
+    @endforeach
 
 
     @endif
