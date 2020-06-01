@@ -8,6 +8,7 @@
     <meta name="author" content="DEPRO" />
     <meta name="theme-color" content="#F93B80">
 
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">

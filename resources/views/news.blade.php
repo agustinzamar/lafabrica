@@ -1,9 +1,5 @@
 @extends('layouts.main')
 
-@section('styles')
-<link href="{{ mix('css/news.css') }}" rel="stylesheet" />
-@endsection
-
 @section('title', 'Novedades')
 
 @section('main')
