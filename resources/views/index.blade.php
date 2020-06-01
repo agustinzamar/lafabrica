@@ -1,165 +1,217 @@
 @extends('layouts.main')
 
 @section('styles')
-    <link href="{{ asset('css/index.css') }}" rel="stylesheet" />
+<link href="{{ mix('css/index.css') }}" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+{!! htmlScriptTagJsApi() !!}
 @endsection
 
 @section('title', 'Inicio')
 
 @section('main')
 
-	<div class="portada">
+<div class="portada">
 
-		<h1> #ConstruyendoCiudadania </h1>
-		<img src="{{ asset('img/wave.svg') }}" class="wave" alt="wave">
+    <h1> #ConstruyendoCiudadania </h1>
+    <img src="{{ asset('img/wave.svg') }}" class="wave" alt="wave">
 
-	</div>
+</div>
 
-	<section class="section1" id="Nosotros">
+<section class="section1" id="Nosotros">
 
-		<p>EN LA <span>FÁBRICA</span> DISEÑAMOS, DESARROLLAMOS E IMPLEMENTAMOS ESTRATEGIAS DE PARTICIPACIÓN CIUDADANA PARA CONTRIBUIR AL DESARROLLO DE LA SOCIEDAD CIVIL.</p>
+    <p>EN LA <span>FÁBRICA</span> DISEÑAMOS, DESARROLLAMOS E IMPLEMENTAMOS ESTRATEGIAS DE PARTICIPACIÓN CIUDADANA PARA
+        CONTRIBUIR AL DESARROLLO DE LA SOCIEDAD CIVIL.</p>
 
-	</section>
+</section>
 
-	<section class="section2" id="ComoTrabajamos">
+<section class="section2" id="ComoTrabajamos">
 
-		<p>¿Cómo trabajamos?</p>
+    <p>¿Cómo trabajamos?</p>
 
-		<div class="trabajos">
+    <div class="trabajos">
 
-			<div class="fortalecer item">
+        <div class="fortalecer item">
 
-				<img src="{{ asset('img/fortalecer.png') }}" alt="Fortalecer">
-				<!-- <h2>Fortalecer</h2> -->
-				<p>Desarrollamos conocimientos y herramientas para consolidar el compromiso y mejorar las capacidades de las Organizaciones de la Sociedad Civil</p>
+            <img src="{{ asset('img/fortalecer.png') }}" alt="Fortalecer">
+            <!-- <h2>Fortalecer</h2> -->
+            <p>Desarrollamos conocimientos y herramientas para consolidar el compromiso y mejorar las capacidades de las
+                Organizaciones de la Sociedad Civil</p>
 
-			</div>
+        </div>
 
-			<div class="intervenir item">
+        <div class="intervenir item">
 
-				<img src="{{ asset('img/intervenir.png') }}" alt="Intervenir">
-				<!-- <h2>Intervenir</h2> -->
-				<p>Generamos acciones de participación y trabajo colaborativo con la comunidad.</p>
+            <img src="{{ asset('img/intervenir.png') }}" alt="Intervenir">
+            <!-- <h2>Intervenir</h2> -->
+            <p>Generamos acciones de participación y trabajo colaborativo con la comunidad.</p>
 
-			</div>
+        </div>
 
-			<div class="compartir item">
+        <div class="compartir item">
 
-				<img src="{{ asset('img/compartir-1.png') }}" alt="Compartir">
-				<!-- <h2>Compartir</h2> -->
-				<p>Brindamos información sobre derechos ciudadanos para fortalecer el ejercicio de la Democracia.</p>
+            <img src="{{ asset('img/compartir-1.png') }}" alt="Compartir">
+            <!-- <h2>Compartir</h2> -->
+            <p>Brindamos información sobre derechos ciudadanos para fortalecer el ejercicio de la Democracia.</p>
 
-			</div>
+        </div>
 
 
-		</div>
+    </div>
 
-		<img src="{{ asset('img/wave6.svg') }}" class="wave" alt="wave">
+    <img src="{{ asset('img/wave6.svg') }}" class="wave" alt="wave">
 
-	</section>
+</section>
 
-	<section class="section3" id="QueHacemos">
+<section class="section3" id="QueHacemos">
 
-		<p>¿Qué hacemos?</p>
+    <p>¿Qué hacemos?</p>
 
-		<div class="cultivar item">
+    <div class="cultivar item">
 
-			<img src="{{ asset('img/cultivar.png') }}" alt="DefinirAlternativo">
+        <img src="{{ asset('img/cultivar.png') }}" alt="DefinirAlternativo">
 
-			<div class="texto">
+        <div class="texto">
 
-				<h2>Cultivar</h2>
-				<p>Espacio de formación e investigación en el campo de las organizaciones sociales, la responsabilidad social y la sociedad civil.</p>
-				<a class="saberMas1" href="{{ route('projects') }}#Cultivar">Saber mas</a>
+            <h2>Cultivar</h2>
+            <p>Espacio de formación e investigación en el campo de las organizaciones sociales, la responsabilidad
+                social y la sociedad civil.</p>
+            <a class="saberMas1" href="{{ route('projects') }}#Cultivar">Saber mas</a>
 
-			</div>
+        </div>
 
-		</div>
+    </div>
 
-		<div class="jujuyLab item">
+    <div class="jujuyLab item">
 
-			<img class="ocultar" src="{{ asset('img/lab.png') }}" alt="DefinirAlternativo">
+        <img class="ocultar" src="{{ asset('img/lab.png') }}" alt="DefinirAlternativo">
 
-			<div class="texto right">
+        <div class="texto right">
 
-				<h2>LabJujuy</h2>
-				<p class="right"> Interfaz de participación ciudadana y trabajo colaborativo.</p>
-				<a class="saberMas2" href="{{ route('projects') }}#LabJujuy">Saber mas</a>
+            <h2>LabJujuy</h2>
+            <p class="right"> Interfaz de participación ciudadana y trabajo colaborativo.</p>
+            <a class="saberMas2" href="{{ route('projects') }}#LabJujuy">Saber mas</a>
 
-			</div>
+        </div>
 
-			<img class="mostrar" src="{{ asset('img/lab.png') }}" alt="DefinirAlternativo">
+        <img class="mostrar" src="{{ asset('img/lab.png') }}" alt="DefinirAlternativo">
 
-		</div>
+    </div>
 
-		<div class="normas item">
+    <div class="normas item">
 
-			<img src="{{ asset('img/normas.png') }}" alt="DefinirAlternativo">
+        <img src="{{ asset('img/normas.png') }}" alt="DefinirAlternativo">
 
-			<div class="texto">
+        <div class="texto">
 
-				<h2>Las Normas que nos Norman</h2>
-				<p>Plataforma para difundir y promover los derechos ciudadanos.</p>
-				<a class="saberMas3" href="{{ route('projects') }}#LasNormasQueNosNorman">Saber mas</a>
+            <h2>Las Normas que nos Norman</h2>
+            <p>Plataforma para difundir y promover los derechos ciudadanos.</p>
+            <a class="saberMas3" href="{{ route('projects') }}#LasNormasQueNosNorman">Saber mas</a>
 
-			</div>
+        </div>
 
-		</div>
+    </div>
 
-	</section>
+</section>
 
-    @if (isset($articles))
+@if (isset($articles))
 
-    <section class="section5" id="Novedades">
+<section class="section5" id="Novedades">
 
-		<p>Novedades</p>
+    <p>Novedades</p>
 
-		<div class="novedades">
+    <div class="novedades">
 
-	        @foreach ($articles as $item)
+        @foreach ($articles as $item)
 
-	            <div class="card">
+        <div class="card">
 
-	                <a href=" {{ route('new', $item->id) }} " class="novedad">
+            <a href=" {{ route('new', $item->id) }} " class="novedad">
 
-	                    <img class="imagenNovedad"
-	                         src="{{ $item->photo ? asset($item->photo->path) :  '' }}"
-	                         alt="{{ $item->photo ? $item->photo->description :  'Portada' }}">
-	                    <h3 class="tituloNovedad">{{ $item->title }}</h3>
-	                    <p class="copete">{{ $item->photo ? $item->photo->description :  '' }}</p>
+                <img class="imagenNovedad" src="{{ $item->photo ? asset($item->photo->path) :  '' }}"
+                    alt="{{ $item->photo ? $item->photo->description :  'Portada' }}">
+                <h3 class="tituloNovedad">{{ $item->title }}</h3>
+                <p class="copete">{{ $item->photo ? $item->photo->description :  '' }}</p>
 
-	                </a>
+            </a>
 
-	            </div>
+        </div>
 
-	        @endforeach
+        @endforeach
 
-		</div>
+    </div>
 
-        <a href="{{ route('news') }}" class="enviar">Todas las noticias</a>
+    <a href="{{ route('news') }}" class="enviar">Todas las noticias</a>
 
-	</section>
+</section>
 
-    @endif
+@endif
 
-	<section class="section4" id="Contacto">
+<section class="section4" id="Contacto">
 
-		<div class="contacto">
+    <div class="contacto">
 
-			<p>Formulario de Contacto</p>
+        <p>Formulario de Contacto</p>
 
-			<div class="formulario">
+        @if (Session::has('error'))
+        <script>
+            Swal.fire({
+                position: 'top',
+                icon: 'error',
+                title: '¡Ups!',
+                text: 'Lo sentimos, algo salió mal.',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        </script>
+        @endif
 
-				<input type="email" placeholder="Tu correo (*Campo obligatorio)" required>
-				<input type="text" placeholder="Tu Nombre (*Campo obligatorio)" required>
-				<input type="text" placeholder="Asunto">
-				<textarea placeholder="Tu mensaje..."></textarea>
-				<button type="submit" class="enviar">Enviar</button>
+        @if (Session::has('success'))
+        <script>
+            Swal.fire({
+                position: 'top',
+                icon: 'success',
+                title: '¡Gracias!',
+                text: 'Su consulta fue enviada.',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        </script>
+        @endif
 
-			</div>
+        <form class="formulario" method="POST" action="{{ route('email.contact') }}">
 
-		</div>
+            @csrf
 
-	</section>
+            <input type="email" name="email" value="{{ old("email") }}" placeholder="Tu correo (*Campo obligatorio)"
+                required>
+            @error('email')
+            <span class="error">{{ $message }}</span>
+            @enderror
+            <input type="text" name="name" value="{{ old("name") }}" min="3" max="32"
+                placeholder="Tu Nombre (*Campo obligatorio)" required>
+            @error('name')
+            <span class="error">{{ $message }}</span>
+            @enderror
+            <input type="text" name="subject" value="{{ old("subject") }}" min="3" max="15" placeholder="Asunto">
+            @error('subject')
+            <span class="error">{{ $message }}</span>
+            @enderror
+            <textarea name="body" placeholder="Tu mensaje...(*Campo obligatorio)" minlength="20"
+                maxlength="1000">{{ old("body") }}</textarea>
+            @error('body')
+            <span class="error">{{ $message }}</span>
+            @enderror
+            {!! htmlFormSnippet() !!}
+            @error('g-recaptcha-response')
+            <span class="error">{{ $message }}</span>
+            @enderror
+            <button type="submit" class="enviar">Enviar</button>
+
+        </form>
+
+    </div>
+
+</section>
 
 @endsection
