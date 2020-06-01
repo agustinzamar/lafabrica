@@ -273,7 +273,8 @@
 }
 
 .section4 .contacto .formulario {
-    max-width: 600px;
+    max-width: 700px;
+    padding: 0 1rem;
     margin: 0 auto;
     display: -webkit-flex;
     display: -moz-flex;
@@ -399,9 +400,7 @@ textarea {
         padding: 50px 0;
     }
 
-    .section2 p,
-    .section3 p,
-    .section4 .contacto p {
+    .subtitle {
         font-size: var(--parrafoCinco);
     }
 
@@ -413,11 +412,11 @@ textarea {
         height: 180px;
     }
 
-    .section3 {
+    .QueHacemos {
         padding: 40px 0;
     }
 
-    .section3 p {
+    .QueHacemos p {
         padding: 0 0 50px 0;
     }
 
@@ -427,19 +426,19 @@ textarea {
 }
 
 @media screen and (max-width: 767px) {
-    .section3 .item {
+    .QueHacemos .item {
         width: 100%;
         grid-template-columns: 1fr;
         height: 100%;
     }
 
-    .section3 .item img {
+    .QueHacemos .item img {
         height: 200px;
         width: 100%;
         object-fit: contain;
     }
 
-    .section3 .item .texto {
+    .QueHacemos .item .texto {
         -ms-align-items: center;
         align-items: center;
         justify-content: center;
@@ -447,21 +446,21 @@ textarea {
         color: #fff;
     }
 
-    .section3 .item .texto p {
+    .QueHacemos .item .texto p {
         text-align: center !important;
         line-height: 26px;
     }
 
-    .section3 .item .texto a {
+    .QueHacemos .item .texto a {
         color: #fff;
         border: 1px solid #fff;
     }
 
-    .section3 .item .ocultar {
+    .QueHacemos .item .ocultar {
         display: block;
     }
 
-    .section3 .item .mostrar {
+    .QueHacemos .item .mostrar {
         display: none;
     }
 }
