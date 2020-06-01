@@ -8,12 +8,15 @@
     <meta name="author" content="DEPRO" />
     <meta name="theme-color" content="#F93B80">
 
-    <link rel="icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" href="{{ asset('/img/icono_azul.png') }}">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'La Fabrica') }} - @yield('title')</title>
+    <meta name="description" content="EN LA FÁBRICA DISEÑAMOS, DESARROLLAMOS E IMPLEMENTAMOS 
+        ESTRATEGIAS DE PARTICIPACIÓN CIUDADANA PARA CONTRIBUIR AL DESARROLLO DE LA SOCIEDAD CIVIL.">
+    <link rel="image_src" href="{{ asset('img/icono_azul.png') }}" />
 
     <!-- Fonts -->
     <script src="https://kit.fontawesome.com/fc69885e8b.js" crossorigin="anonymous"></script>
