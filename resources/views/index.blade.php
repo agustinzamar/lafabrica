@@ -12,7 +12,7 @@
 
 <div class="PortadaIndex">
 
-    <h1> #ConstruyendoCiudadania </h1>
+    <h1> #ConstruyendoCiudadanía </h1>
     <img src="{{ asset('img/wave.svg') }}" class="PortadaIndex__wave" alt="wave">
 
 </div>
@@ -75,7 +75,7 @@
             <h2>Cultivar</h2>
             <p>Espacio de formación e investigación en el campo de las organizaciones sociales, la responsabilidad
                 social y la sociedad civil.</p>
-            <a class="saberMas1" href="{{ route('projects') }}#Cultivar">Saber mas</a>
+            <a class="saberMas1" href="{{ route('projects') }}#Cultivar">Saber más</a>
 
         </div>
 
@@ -89,7 +89,7 @@
 
             <h2>LabJujuy</h2>
             <p class="right"> Interfaz de participación ciudadana y trabajo colaborativo.</p>
-            <a class="saberMas2" href="{{ route('projects') }}#LabJujuy">Saber mas</a>
+            <a class="saberMas2" href="{{ route('projects') }}#LabJujuy">Saber más</a>
 
         </div>
 
@@ -105,7 +105,7 @@
 
             <h2>Las Normas que nos Norman</h2>
             <p>Plataforma para difundir y promover los derechos ciudadanos.</p>
-            <a class="saberMas3" href="{{ route('projects') }}#LasNormasQueNosNorman">Saber mas</a>
+            <a class="saberMas3" href="{{ route('projects') }}#LasNormasQueNosNorman">Saber más</a>
 
         </div>
 

@@ -23,7 +23,7 @@ body {
     margin: auto;
 }
 
-.contenedor {
+.contenedor--proyectos {
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 0 100px 0;
@@ -38,13 +38,13 @@ body {
     padding: 20px;
 }
 
-.item__imagen {
+.contenedor__item--imagen {
     animation: float 6s ease-in-out infinite;
     width: 90%;
     margin: auto;
 }
 
-.item__texto {
+.contenedor__item--texto {
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -61,21 +61,8 @@ body {
     text-align: justify;
 }
 
-.item__titulo {
+.contenedor__item--titulo {
     font-size: var(--parrafoCinco);
-}
-
-.titulo1 {
-    color: var(--verde);
-}
-
-.titulo2 {
-    color: var(--rosado);
-    margin-bottom: 10px;
-}
-
-.titulo3 {
-    color: var(--morado);
 }
 
 .item__parrafo {
