@@ -1,8 +1,7 @@
-
 @extends('layouts.main')
 
 @section('styles')
-    <link href="{{ asset('css/new.css') }}" rel="stylesheet" />
+<link href="{{ mix('css/new.css') }}" rel="stylesheet" />
 @endsection
 
 @section('title', $article ? $article->title : 'Novedad')
