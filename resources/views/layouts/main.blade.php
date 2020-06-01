@@ -143,6 +143,10 @@
 
         </div>
 
+        <div class="footer_logo">
+            <img src="{{ asset('img/logo_gris.png') }}" alt="">
+        </div>
+
     </footer>
     <script src="{{asset('js/header.js')}}"></script>
     <script src="{{asset('js/header2.js')}}"></script>

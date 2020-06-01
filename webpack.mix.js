@@ -15,3 +15,7 @@ mix.sass('resources/sass/app.scss', 'public/css').styles(
     'resources/css/*.css',
     'public/css/layout.css'
 )
+
+if (mix.inProduction()) {
+    mix.version()
+}
