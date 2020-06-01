@@ -10,14 +10,14 @@
 
 @section('main')
 
-<div class="portada">
+<div class="PortadaIndex">
 
     <h1> #ConstruyendoCiudadania </h1>
-    <img src="{{ asset('img/wave.svg') }}" class="wave" alt="wave">
+    <img src="{{ asset('img/wave.svg') }}" class="PortadaIndex__wave" alt="wave">
 
 </div>
 
-<section class="section1" id="Nosotros">
+<section class="mision" id="Nosotros">
 
     <p>EN LA <span>FÁBRICA</span> DISEÑAMOS, DESARROLLAMOS E IMPLEMENTAMOS ESTRATEGIAS DE PARTICIPACIÓN CIUDADANA PARA
         CONTRIBUIR AL DESARROLLO DE LA SOCIEDAD CIVIL.</p>
@@ -26,7 +26,7 @@
 
 <section class="section2" id="ComoTrabajamos">
 
-    <p>¿Cómo trabajamos?</p>
+    <p class="subtitle">¿Cómo trabajamos?</p>
 
     <div class="trabajos">
 
@@ -62,9 +62,9 @@
 
 </section>
 
-<section class="section3" id="QueHacemos">
+<section class="QueHacemos" id="QueHacemos">
 
-    <p>¿Qué hacemos?</p>
+    <p class="subtitle">¿Qué hacemos?</p>
 
     <div class="cultivar item">
 
@@ -117,13 +117,13 @@
 
 <section class="section5" id="Novedades">
 
-    <p>Novedades</p>
+    <p class="subtitle">Novedades</p>
 
     <div class="novedades">
 
         @foreach ($articles as $item)
 
-        <div class="card">
+        <div class="novedades__card">
 
             <a href=" {{ route('new', $item->id) }} " class="novedad">
 

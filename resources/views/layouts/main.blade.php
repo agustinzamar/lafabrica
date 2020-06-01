@@ -15,10 +15,6 @@
 
     <title>{{ config('app.name', 'La Fabrica') }} - @yield('title')</title>
 
-    <!-- Scripts -->
-    <!-- <script src="{{asset('js/header.js')}}"></script> -->
-    @yield('scripts')
-
     <!-- Fonts -->
     <script src="https://kit.fontawesome.com/fc69885e8b.js" crossorigin="anonymous"></script>
     @yield('fonts')
@@ -148,6 +144,8 @@
     <script src="{{asset('js/header.js')}}"></script>
     <script src="{{asset('js/header2.js')}}"></script>
     <script src="{{asset('js/gallery.js')}}"></script>
+    <!-- Scripts -->
+    @yield('scripts')
 
 </body>
 

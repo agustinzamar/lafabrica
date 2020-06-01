@@ -1,40 +1,31 @@
-.portada {
+.PortadaIndex {
     height: 100vh;
     width: 100%;
-    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url(../img/1.2.1.jpg);
-    background: -o-linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url(../img/1.2.1.jpg);
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         url(../img/1.2.1.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
     display: flex;
     justify-content: center;
-    -ms-align-items: center;
     align-items: center;
     position: relative;
 }
 
-.portada .wave {
+.PortadaIndex__wave {
     position: absolute;
     bottom: -1px;
     width: 100%;
 }
 
-.portada h1 {
+.PortadaIndex h1 {
     color: #fff;
     /*	font-size: var(--parrafoDiez);*/
     font-size: 7vw;
 }
 
-.section1 {
+.mision {
     min-height: 500px; /*originalmente era 400*/
     padding: 0 150px 150px 150px; /*50px 150px*/
     text-align: center;
@@ -49,18 +40,16 @@
     align-items: center;
 }
 
-.section1 p {
+.mision p {
     font-size: var(--parrafoCinco);
     font-weight: 900;
 }
 
-.section1 span {
+.mision span {
     color: var(--rosado);
 }
 
-.section2 p,
-.section3 p,
-.section5 p {
+.subtitle {
     font-size: var(--parrafoSiete);
     font-weight: 900;
     width: 100%;
@@ -130,7 +119,7 @@
     line-height: 26px;
 }
 
-.section3 {
+.QueHacemos {
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -147,26 +136,27 @@
     padding: 80px 0;
     max-width: 1300px;
     margin: auto;
+    background-color: #fff;
     /*position: relative;*/
 }
 
-.section3 p {
+.QueHacemos p {
     padding: 50px 0;
 }
 
-.section3 .item {
+.QueHacemos .item {
     display: grid;
     grid-template-columns: 1fr 1fr;
     min-height: 350px;
 }
 
-.section3 .item img {
+.QueHacemos .item img {
     object-fit: cover;
     width: 100%;
     height: 100%;
 }
 
-.section3 .item .texto {
+.QueHacemos .item .texto {
     padding: 50px;
     display: -webkit-flex;
     display: -moz-flex;
@@ -183,13 +173,13 @@
     align-items: flex-start;
 }
 
-.section3 .item .texto h2 {
+.QueHacemos .item .texto h2 {
     font-size: var(--parrafoCinco);
     font-weight: 900;
     color: #535354;
 }
 
-.section3 .item .texto p {
+.QueHacemos .item .texto p {
     font-size: var(--parrafoTres);
     margin: 30px 0;
     padding: 0;
@@ -197,7 +187,7 @@
     text-align: left;
 }
 
-.section3 .item .texto a,
+.QueHacemos .item .texto a,
 .enviar {
     font-size: var(--parrafoTres);
     padding: 15px 30px;
@@ -207,44 +197,44 @@
     background: none;
 }
 
-.section3 .item .texto .saberMas1 {
+.QueHacemos .item .texto .saberMas1 {
     border: 1px solid var(--verde);
     color: var(--verde);
 }
 
-.section3 .item .texto .saberMas2,
+.QueHacemos .item .texto .saberMas2,
 .enviar {
     border: 1px solid var(--rosado);
     color: var(--rosado);
 }
 
-.section3 .item .texto .saberMas3 {
+.QueHacemos .item .texto .saberMas3 {
     border: 1px solid var(--morado);
     color: var(--morado);
 }
 
-.section3 .item .texto .saberMas1:hover {
+.QueHacemos .item .texto .saberMas1:hover {
     color: #fff;
     background: var(--verde);
 }
 
-.section3 .item .texto .saberMas2:hover {
+.QueHacemos .item .texto .saberMas2:hover {
     color: #fff;
     background: var(--rosado);
 }
 
-.section3 .item .texto .saberMas3:hover {
+.QueHacemos .item .texto .saberMas3:hover {
     color: #fff;
     background: var(--morado);
 }
 
-.section3 .item .right {
+.QueHacemos .item .right {
     -ms-align-items: flex-end;
     align-items: flex-end;
     text-align: right !important;
 }
 
-.section3 .item .ocultar {
+.QueHacemos .item .ocultar {
     display: none;
 }
 
@@ -367,13 +357,13 @@ textarea {
     word-wrap: break-word;
 }
 
-.novedades .card .novedad img {
+.novedades .novedades__card .novedad img {
     height: 200px;
     width: 100%;
     object-fit: cover;
 }
 
-.novedades .card .novedad .tituloNovedad {
+.novedades .novedades__card .novedad .tituloNovedad {
     font-size: var(--parrafoCuatro);
     color: #535354;
     margin: 15px 0;
@@ -382,7 +372,7 @@ textarea {
     word-wrap: break-word;
 }
 
-.novedades .card .novedad .copete {
+.novedades .novedades__card .novedad .copete {
     color: #535354;
     font-size: var(--parrafoDos);
     text-align: left;
