@@ -2,6 +2,9 @@
 
 @section('styles')
 <link href="{{ mix('css/index.css') }}" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+{!! htmlScriptTagJsApi() !!}
 @endsection
 
 @section('title', 'Inicio')
@@ -150,15 +153,62 @@
 
         <p>Formulario de Contacto</p>
 
-        <div class="formulario">
+        @if (Session::has('error'))
+        <script>
+            Swal.fire({
+                position: 'top',
+                icon: 'error',
+                title: '¡Ups!',
+                text: 'Lo sentimos, algo salió mal.',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        </script>
+        @endif
 
-            <input type="email" placeholder="Tu correo (*Campo obligatorio)" required>
-            <input type="text" placeholder="Tu Nombre (*Campo obligatorio)" required>
-            <input type="text" placeholder="Asunto">
-            <textarea placeholder="Tu mensaje..."></textarea>
+        @if (Session::has('success'))
+        <script>
+            Swal.fire({
+                position: 'top',
+                icon: 'success',
+                title: '¡Gracias!',
+                text: 'Su consulta fue enviada.',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        </script>
+        @endif
+
+        <form class="formulario" method="POST" action="{{ route('email.contact') }}">
+
+            @csrf
+
+            <input type="email" name="email" value="{{ old("email") }}" placeholder="Tu correo (*Campo obligatorio)"
+                required>
+            @error('email')
+            <span class="error">{{ $message }}</span>
+            @enderror
+            <input type="text" name="name" value="{{ old("name") }}" min="3" max="32"
+                placeholder="Tu Nombre (*Campo obligatorio)" required>
+            @error('name')
+            <span class="error">{{ $message }}</span>
+            @enderror
+            <input type="text" name="subject" value="{{ old("subject") }}" min="3" max="15" placeholder="Asunto">
+            @error('subject')
+            <span class="error">{{ $message }}</span>
+            @enderror
+            <textarea name="body" placeholder="Tu mensaje...(*Campo obligatorio)" minlength="20"
+                maxlength="1000">{{ old("body") }}</textarea>
+            @error('body')
+            <span class="error">{{ $message }}</span>
+            @enderror
+            {!! htmlFormSnippet() !!}
+            @error('g-recaptcha-response')
+            <span class="error">{{ $message }}</span>
+            @enderror
             <button type="submit" class="enviar">Enviar</button>
 
-        </div>
+        </form>
 
     </div>
 
