@@ -16,7 +16,7 @@
 
 </div>
 
-<div class="contenedor">
+<div class="contenedor-proyectos">
 
     @if ($projects)
 
@@ -24,17 +24,15 @@
 
     <div class="contenedor__item" id="{{ $item->slug }}">
 
-        <img class="item__imagen" src="{{ asset('img/'.$item->main_picture) }}" alt="Logo del proyecto">
+        <img class="contenedor__item--imagen" src="{{ asset('img/'.$item->main_picture) }}" alt="Logo del proyecto">
 
-        <div class="item__texto">
+        <div class="contenedor__item--texto">
 
-            <h1 class="item__titulo titulo3">{{ $item->name }}</h1>
+            <h1 class="contenedor__item--titulo">{{ $item->name }}</h1>
 
             <p class="item__parrafo">
                 {!! $item->description !!}
             </p>
-
-            @if (count($item->photos) > 0 )
 
             <div class="slider">
 
@@ -56,8 +54,6 @@
                 </div>
 
             </div>
-
-            @endif
 
         </div>
 
