@@ -1,8 +1,4 @@
 {
     "/css/app.css": "/css/app.css",
-    "/css/contenido.css": "/css/contenido.css",
-    "/css/index.css": "/css/index.css",
-    "/css/layout.css": "/css/layout.css",
-    "/css/new.css": "/css/new.css",
-    "/css/news.css": "/css/news.css"
+    "/css/layout.css": "/css/layout.css"
 }

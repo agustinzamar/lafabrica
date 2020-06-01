@@ -1,9 +1,5 @@
 @extends('layouts.main')
 
-@section('styles')
-<link href="{{ mix('css/contenido.css') }}" rel="stylesheet" />
-@endsection
-
 @section('title', 'Proyectos')
 
 @section('main')
@@ -38,28 +34,6 @@
                 {!! $item->description !!}
             </p>
 
-<<<<<<< HEAD
-                    <div class="slider" >
-
-                        <div class="contenedor">
-                            @if (count($item->photos) > 0 )
-                                @foreach ($item->photos as $photo)
-                                    <div class="slide">
-                                        <img src="{{ $photo->path }}" alt="{{ $photo->description }}">
-                                    </div>
-                                @endforeach
-                            @endif
-                        </div>
-
-                        <div class="controles">
-                            <span onclick="prev(this)" class="anterior"><i class="fas fa-chevron-left"></i></span>
-                            <span onclick="next(this)" class="siguiente"><i class="fas fa-chevron-right"></i></span>
-                            <ul class="dots">
-                            </ul>
-                        </div>
-
-                    </div>
-=======
             @if (count($item->photos) > 0 )
 
             <div class="slider">
@@ -84,7 +58,6 @@
             </div>
 
             @endif
->>>>>>> dev
 
         </div>
 

@@ -1,7 +1,6 @@
 @extends('layouts.main')
 
 @section('styles')
-<link href="{{ mix('css/index.css') }}" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 {!! htmlScriptTagJsApi() !!}
