@@ -40,6 +40,11 @@
     scroll-behavior: smooth;
 }
 
+a,
+a:hover {
+    text-decoration: none;
+}
+
 /*INICIO SCROLL BAR*/
 ::-webkit-scrollbar {
     width: 10px;
@@ -302,33 +307,28 @@ footer .footer_logo_grande img {
     object-fit: cover;
 }*/
 
-footer .footer_logo_chico{
-
+footer .footer_logo_chico {
     display: none;
 }
 
-.depro{
-  
+.depro {
     width: 100%;
     text-align: center;
     font-size: 1em;
     background: #d90a6c;
     background: #282828;
     height: 70px;
-
 }
 
-.depro p{
-  
-  color:white;
-  margin: 0;
+.depro p {
+    color: white;
+    margin: 0;
 }
 
-.depro p span a{
-  
+.depro p span a {
     font-family: 'Audiowide', cursive;
     color: white;
-    line-height:70px;
+    line-height: 70px;
 }
 
 @media screen and (max-width: 425px) {
@@ -342,7 +342,6 @@ footer .footer_logo_chico{
 }
 
 @media (min-width: 0px) and (max-width: 1144px) {
-    
     .header__menu-toggle {
         display: block !important;
     }
@@ -351,30 +350,25 @@ footer .footer_logo_chico{
         display: none;
     }
 
-    footer{
-
+    footer {
         padding-top: 50px;
     }
 
-    footer p{
-
+    footer p {
         margin-top: 20px;
     }
 
-    footer .footer_logo_grande{
-
+    footer .footer_logo_grande {
         display: none;
     }
 
-    footer .footer_logo_chico{
-
+    footer .footer_logo_chico {
         display: block;
         width: 120px;
         height: 120px;
     }
 
-    footer .footer_logo_chico img{
-
+    footer .footer_logo_chico img {
         width: 100%;
         height: 100%;
     }

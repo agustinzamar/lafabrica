@@ -123,16 +123,14 @@
 
         @foreach ($articles as $item)
 
-        <div class="novedades__card">
+        <div class="novedades__card" onclick="window.location.href = '{{ route('new', $item->id) }}'">
 
-            <a href=" {{ route('new', $item->id) }} " class="novedad">
-
-                <img class="imagenNovedad" src="{{ $item->photo ? asset($item->photo->path) :  '' }}"
-                    alt="{{ $item->photo ? $item->photo->description :  'Portada' }}">
-                <h3 class="tituloNovedad">{{ $item->title }}</h3>
-                <p class="copete">{{ $item->photo ? $item->photo->description :  '' }}</p>
-
-            </a>
+            <img class="novedades__card--img" src="{{ $item->photo ? asset($item->photo->path) :  '' }}"
+                alt="{{ $item->photo ? $item->photo->description :  'Portada' }}">
+            <h3 class="novedades__card--title">{{ $item->title }}</h3>
+            <p class="novedades__card--body">
+                {!! Str::limit($item->body, 200) !!}
+            </p>
 
         </div>
 
