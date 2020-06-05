@@ -22,19 +22,21 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://lafabricajujuy.com">
+    <meta property="og:url" content="https://metatags.io/">
     <meta property="og:title" content="La Fábrica">
     <meta property="og:description"
         content="EN LA FÁBRICA DISEÑAMOS, DESARROLLAMOS E IMPLEMENTAMOS ESTRATEGIAS DE PARTICIPACIÓN CIUDADANA PARA CONTRIBUIR AL DESARROLLO DE LA SOCIEDAD CIVIL.">
-    <meta property="og:image" content="{{ asset('img/logo.png') }}">
+    <meta property="og:image"
+        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="http://lafabricajujuy.com">
+    <meta property="twitter:url" content="https://metatags.io/">
     <meta property="twitter:title" content="La Fábrica">
     <meta property="twitter:description"
         content="EN LA FÁBRICA DISEÑAMOS, DESARROLLAMOS E IMPLEMENTAMOS ESTRATEGIAS DE PARTICIPACIÓN CIUDADANA PARA CONTRIBUIR AL DESARROLLO DE LA SOCIEDAD CIVIL.">
-    <meta property="twitter:image" content="{{ asset('img/logo.png') }}">
+    <meta property="twitter:image"
+        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
 
 
     <!-- Fonts -->
@@ -149,6 +151,10 @@
 
     <footer>
 
+        <figure class="footer_logo_chico">
+            <img src="{{ asset('img/logo_blanco.png') }}" alt="logo de color blanco de La Fabrica">
+        </figure>
+
         <p>TODOS LOS DERECHOS RESERVADOS &copy; {{ \Carbon\Carbon::now()->format('Y') }} - LA FÁBRICA.</p>
 
         <div class="redes">
@@ -162,11 +168,18 @@
 
         </div>
 
-        <div class="footer_logo">
-            <img src="{{ asset('img/logo_gris.png') }}" alt="">
+        <div class="footer_logo_grande">
+            <img src="{{ asset('img/logo_blanco.png') }}" alt="logo de color blanco de La Fabrica">
         </div>
 
     </footer>
+
+    <section class="depro">
+
+        <p>Echo con ❤ por <span><a href="https://www.depro.tech" target="_blank">DEPRO</a></span></p>
+
+    </section>
+
     <script src="{{asset('js/header.js')}}"></script>
     <script src="{{asset('js/header2.js')}}"></script>
     <script src="{{asset('js/gallery.js')}}"></script>
