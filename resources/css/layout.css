@@ -1,6 +1,6 @@
 /*Fuentes*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 :root {
     /*Textos*/
     --parrafoUno: 12px;
@@ -38,11 +38,6 @@
     text-decoration: none;
     list-style: none;
     scroll-behavior: smooth;
-}
-
-a,
-a:hover {
-    text-decoration: none;
 }
 
 /*INICIO SCROLL BAR*/
@@ -234,7 +229,7 @@ a:hover {
 
 footer {
     width: 100%;
-    height: 350px;
+    min-height: 350px;
     background: var(--azul);
     display: -webkit-flex;
     display: -moz-flex;
@@ -286,7 +281,7 @@ footer .redes a i:hover {
     transform: rotateY(180deg);
 }
 
-footer .footer_logo {
+footer .footer_logo_grande {
     height: 100%;
 
     display: flex;
@@ -300,11 +295,40 @@ footer .footer_logo {
     transform: translateY(-50%) rotate(-30deg);
     overflow: hidden;
 }
-
-footer .footer_logo img {
+/*
+footer .footer_logo_grande img {
     height: 110%;
     width: 110%;
     object-fit: cover;
+}*/
+
+footer .footer_logo_chico{
+
+    display: none;
+}
+
+.depro{
+  
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    background: #d90a6c;
+    background: #282828;
+    height: 70px;
+
+}
+
+.depro p{
+  
+  color:white;
+  margin: 0;
+}
+
+.depro p span a{
+  
+    font-family: 'Audiowide', cursive;
+    color: white;
+    line-height:70px;
 }
 
 @media screen and (max-width: 425px) {
@@ -312,17 +336,46 @@ footer .footer_logo img {
         height: 50%;
     }
 
-    footer .footer_logo {
+    footer .footer_logo_grande {
         right: -5%;
     }
 }
 
 @media (min-width: 0px) and (max-width: 1144px) {
+    
     .header__menu-toggle {
         display: block !important;
     }
 
     .header .enlaces {
         display: none;
+    }
+
+    footer{
+
+        padding-top: 50px;
+    }
+
+    footer p{
+
+        margin-top: 20px;
+    }
+
+    footer .footer_logo_grande{
+
+        display: none;
+    }
+
+    footer .footer_logo_chico{
+
+        display: block;
+        width: 120px;
+        height: 120px;
+    }
+
+    footer .footer_logo_chico img{
+
+        width: 100%;
+        height: 100%;
     }
 }
