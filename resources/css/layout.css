@@ -40,6 +40,11 @@
     scroll-behavior: smooth;
 }
 
+a,
+a:hover {
+    text-decoration: none;
+}
+
 /*INICIO SCROLL BAR*/
 ::-webkit-scrollbar {
     width: 10px;

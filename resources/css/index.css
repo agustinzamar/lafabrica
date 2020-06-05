@@ -358,30 +358,6 @@ textarea {
     word-wrap: break-word;
 }
 
-.novedades .novedades__card .novedad img {
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-}
-
-.novedades .novedades__card .novedad .tituloNovedad {
-    font-size: var(--parrafoCuatro);
-    color: #535354;
-    margin: 15px 0;
-    text-align: left;
-    font-weight: 700;
-    word-wrap: break-word;
-}
-
-.novedades .novedades__card .novedad .copete {
-    color: #535354;
-    font-size: var(--parrafoDos);
-    text-align: left;
-    font-weight: normal;
-    line-height: 24px;
-    word-wrap: break-word;
-}
-
 .section5 .enviar:hover {
     background: var(--rosado);
     color: #fff;

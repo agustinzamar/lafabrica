@@ -10,19 +10,19 @@
 
     <div class="gridNoticias">
 
-        @foreach ($articles as $new)
-        <div class="card">
+        @foreach ($articles as $item)
 
-            <a href="{{ route('new', $new->id) }}" class="novedad">
+        <div class="novedades__card" onclick="window.location.href = '{{ route('new', $item->id) }}'">
 
-                <img class="imagenNovedad" src="{{ $new->photo ? asset($new->photo->path) : '' }}" alt="">
-                <h3 class="tituloNovedad"> {{ $new->title }} </h3>
-                <p class="copete">
-                    {!! Str::limit($new->body, 200) !!}
-                </p>
-            </a>
+            <img class="novedades__card--img" src="{{ $item->photo ? asset($item->photo->path) :  '' }}"
+                alt="{{ $item->photo ? $item->photo->description :  'Portada' }}">
+            <h3 class="novedades__card--title">{{ $item->title }}</h3>
+            <p class="novedades__card--body">
+                {!! Str::limit($item->body, 200) !!}
+            </p>
 
         </div>
+
         @endforeach
 
     </div>
