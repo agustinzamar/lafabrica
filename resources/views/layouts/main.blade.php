@@ -149,6 +149,10 @@
 
     <footer>
 
+        <figure class="footer_logo_chico">
+            <img src="{{ asset('img/logo_blanco.png') }}" alt="logo de color blanco de La Fabrica">
+        </figure>
+
         <p>TODOS LOS DERECHOS RESERVADOS &copy; {{ \Carbon\Carbon::now()->format('Y') }} - LA FÁBRICA.</p>
 
         <div class="redes">
@@ -162,11 +166,18 @@
 
         </div>
 
-        <div class="footer_logo">
-            <img src="{{ asset('img/logo_gris.png') }}" alt="">
+        <div class="footer_logo_grande">
+            <img src="{{ asset('img/logo_blanco.png') }}" alt="logo de color blanco de La Fabrica">
         </div>
 
     </footer>
+
+    <section class="depro">
+
+        <p>Echo con ❤ por <span><a href="https://www.depro.tech" target="_blank">DEPRO</a></span></p>
+
+    </section>
+    
     <script src="{{asset('js/header.js')}}"></script>
     <script src="{{asset('js/header2.js')}}"></script>
     <script src="{{asset('js/gallery.js')}}"></script>
