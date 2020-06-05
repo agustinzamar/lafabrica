@@ -6,6 +6,8 @@
 
 <div class="noticias">
 
+    <p class="subtitle">Novedades</p>
+
     @if (count($articles) > 0)
 
     <div class="gridNoticias">
