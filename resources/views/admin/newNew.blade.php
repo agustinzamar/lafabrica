@@ -5,7 +5,7 @@
     .preview .photo-container {
         display: flex;
         height: 300px;
-        background-color: #fff
+        background-color: #ddd
     }
 
     .preview .photo-container img {
@@ -52,10 +52,16 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="description" class="label">Resumen de la novedad</label>
-                            <input type="text" class="form-control" placeholder="Copete" name="description"
-                                id="description"
-                                value="{{ old('description')? old('description') : ($article ? ($article->photo ? $article->photo->description : '') : '') }}">
+                            <label for="description" class="label">Describa la imagen</label>
+                            <input type="text" class="form-control" placeholder="Descripción de la imagen"
+                                name="photo_description" id="photo_description"
+                                value="{{ old('photo_description')? old('photo_description') : ($article ? ($article->photo ? $article->photo->description : '') : '') }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="description" class="label">Copete</label>
+
+                            <textarea placeholder="Copete" name="description" class="form-control" required
+                                id="description">{{ old('description')? old('description') : ($article ? $article->description : '') }}</textarea>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -109,7 +115,12 @@
         height: '500px',
         initialValue: `{!! old("body") ? old("body") : ($article ? $article->body : '') !!}`,
         initialEditType: 'markdown',
-        previewStyle: 'vertical'
+        previewStyle: 'vertical',
+        linkAttribute: {
+        target: '_blank',
+        contenteditable: 'false',
+        rel: 'noopener noreferrer'
+        },
     });
 
     const form = document.querySelector('#form')

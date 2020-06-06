@@ -39,6 +39,7 @@
 
     <!-- Fonts -->
     <script src="https://kit.fontawesome.com/fc69885e8b.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
     @yield('fonts')
 
     <!-- Styles -->

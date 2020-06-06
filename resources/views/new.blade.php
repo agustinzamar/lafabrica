@@ -5,7 +5,8 @@
 @section('main')
 <div class="portada">
 
-    <img src="{{ $article->photo ? $article->photo->path : ''}}" alt="">
+    <img src="{{ $article->photo ? $article->photo->path : ''}}"
+        alt="{{ $article->photo ? $article->photo->description :  'Portada' }}">
 
 </div>
 
@@ -16,7 +17,9 @@
     </h2>
 
     <p class="contenedor__copete">
-        @markdown($article->body)
+        {{ $article->description }}
     </p>
+
+    @markdown($article->body)
 </div>
 @endsection

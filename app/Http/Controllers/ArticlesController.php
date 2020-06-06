@@ -30,7 +30,8 @@ class ArticlesController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'photo' => 'required|image',
-            'description' => 'string|nullable',
+            'photo_description' => 'string|nullable',
+            'description' => 'required|string|max:128',
             'title' => 'required|string',
             'body' => 'required|string',
         ]);
@@ -46,10 +47,11 @@ class ArticlesController extends Controller
 
         $new->title = $request->input('title');
         $new->body = $request->input('body');
+        $new->description = $request->input('description');
 
         $photo = new Photo();
 
-        $photo->description = $request->input('description');
+        $photo->description = $request->input('photo_description');
 
         $file = $request->file('photo');
         $name =
@@ -77,6 +79,7 @@ class ArticlesController extends Controller
 
         $validator = Validator::make($request->all(), [
             'photo' => 'image',
+            'photo_description' => 'string|nullable',
             'description' => 'string|nullable',
             'title' => 'required|string',
             'body' => 'required|string',
@@ -91,10 +94,11 @@ class ArticlesController extends Controller
 
         $new->title = $request->input('title');
         $new->body = $request->input('body');
+        $new->description = $request->input('description');
 
         $photo = $new->photo ?? new Photo();
 
-        $photo->description = $request->input('description');
+        $photo->description = $request->input('photo_description');
 
         try {
             $new->update();

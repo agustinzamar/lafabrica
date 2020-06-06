@@ -20,7 +20,7 @@
                 alt="{{ $item->photo ? $item->photo->description :  'Portada' }}">
             <h3 class="novedades__card--title">{{ $item->title }}</h3>
             <p class="novedades__card--body">
-                {!! $item->photo ? $item->photo->description : 'Portada' !!}
+                {{ Str::limit($item->description, 128) }}
             </p>
 
         </div>
