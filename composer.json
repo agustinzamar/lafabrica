@@ -11,6 +11,7 @@
         "php": "^7.2",
         "biscolab/laravel-recaptcha": "^4.1",
         "fideloper/proxy": "^4.0",
+        "graham-campbell/markdown": "^12.0",
         "laravel/framework": "^6.2",
         "laravel/tinker": "^2.0",
         "tightenco/ziggy": "^0.8.1"

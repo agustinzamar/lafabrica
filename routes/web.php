@@ -36,12 +36,17 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     );
 
     Route::get('novedades', 'AdminController@news')->name('admin.news');
-    Route::get('novedades/new', 'AdminController@newNew')->name('admin.newNew');
+    Route::get('novedades/new/{id?}', 'AdminController@newNew')->name(
+        'admin.newNew'
+    );
     Route::post('novedades/delete', 'ArticlesController@delete')->name(
         'news.delete'
     );
     Route::post('novedades/create', 'ArticlesController@create')->name(
         'news.create'
+    );
+    Route::post('novedades/edit/{id}', 'ArticlesController@edit')->name(
+        'news.edit'
     );
 
     Route::get('proyectos', 'AdminController@projects')->name('admin.projects');

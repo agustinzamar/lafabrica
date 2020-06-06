@@ -11,10 +11,12 @@
 
 <div class="contenedor">
 
-    <h2 class="contenedor__titulo">{{ $article->title }}</h2>
+    <h2 class="contenedor__titulo">
+        {{ $article->title }}
+    </h2>
 
     <p class="contenedor__copete">
-        {!! $article->body !!}
+        @markdown($article->body)
     </p>
 </div>
 @endsection

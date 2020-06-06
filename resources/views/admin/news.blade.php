@@ -7,8 +7,8 @@
             <h5 class="title">Todas las novedades</h5>
         </div>
         <div class="col-md-2">
-            <a href="{{ route('admin.newNew') }}" class="btn btn-primary float-right">
-                Publicar nueva
+            <a href="{{ route('admin.newNew') }}" class="btn btn-success float-right">
+                Redactar <i class="fas fa-plus-circle"></i>
             </a>
         </div>
         <div class="col-md-12 mt-3">
@@ -34,10 +34,14 @@
                         <td>{!! Str::words($new->body, 20, '...'); !!}</td>
                         <td>{{ $new->created_at->format('d/m/Y') }}</td>
                         <td>
-                            <a target="_blank" class="btn btn-primary btn-block"
-                                href="{{ route('new', $new->id) }}">Ver</a>
-                            <button class="btn btn-danger btn-block"
-                                onclick="deleteItem(this, {{ $new->id }})">Eliminar</button>
+                            <div class="btn-group">
+                                <a class="btn btn-primary btn-sm mr-2" href="{{ route('admin.newNew', $new->id) }}">
+                                    <i class="fas fa-pen"></i>
+                                </a>
+                                <button class="btn btn-danger btn-sm" onclick="deleteItem(this, {{ $new->id }})">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
                         </td>
                     </tr>
                     @endforeach

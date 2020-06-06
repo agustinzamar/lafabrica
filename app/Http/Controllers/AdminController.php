@@ -19,38 +19,49 @@ class AdminController extends Controller
         return view('admin.dashboard');
     }
 
-    public function newPhoto(){
+    public function newPhoto()
+    {
         return view('admin.newPhoto');
     }
 
-    public function news(){
-
-        $news = Article::with('photo')->latest()->get();
+    public function news()
+    {
+        $news = Article::with('photo')
+            ->latest()
+            ->get();
 
         return view('admin.news')->with([
-            'news' => $news
+            'news' => $news,
         ]);
     }
 
-    public function newNew(){
-        return view('admin.newNew');
+    public function newNew($id = null)
+    {
+        $new = null;
+        if ($id) {
+            $new = Article::find($id);
+        }
+
+        return view('admin.newNew')->with([
+            'article' => $new,
+        ]);
     }
 
-    public function projects(){
-
+    public function projects()
+    {
         $projects = Project::all();
 
         return view('admin.projects')->with([
-            'projects' => $projects
+            'projects' => $projects,
         ]);
     }
 
-    public function project($id){
-
+    public function project($id)
+    {
         $project = Project::with('photos')->find($id);
 
         return view('admin.project')->with([
-            'project' => $project
+            'project' => $project,
         ]);
     }
 }
