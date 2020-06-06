@@ -22,19 +22,19 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://lafabricajujuy.com">
+    <meta property="og:url" content="http://www.lafabricajujuy.com">
     <meta property="og:title" content="La Fábrica">
     <meta property="og:description"
-        content="EN LA FÁBRICA DISEÑAMOS, DESARROLLAMOS E IMPLEMENTAMOS ESTRATEGIAS DE PARTICIPACIÓN CIUDADANA PARA CONTRIBUIR AL DESARROLLO DE LA SOCIEDAD CIVIL.">
-    <meta property="og:image" content="{{ asset('img/logo.png') }}">
+        content="En la fábrica diseñamos, desarrollamos e implementamos estrategias de participación ciudadana para contribuir al desarrollo de la sociedad civil.">
+    <meta property="og:image" content="{{ asset('img/icono_azul.png') }}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="http://lafabricajujuy.com">
+    <meta property="twitter:url" content="http://www.lafabricajujuy.com">
     <meta property="twitter:title" content="La Fábrica">
     <meta property="twitter:description"
-        content="EN LA FÁBRICA DISEÑAMOS, DESARROLLAMOS E IMPLEMENTAMOS ESTRATEGIAS DE PARTICIPACIÓN CIUDADANA PARA CONTRIBUIR AL DESARROLLO DE LA SOCIEDAD CIVIL.">
-    <meta property="twitter:image" content="{{ asset('img/logo.png') }}">
+        content="En la fábrica diseñamos, desarrollamos e implementamos estrategias de participación ciudadana para contribuir al desarrollo de la sociedad civil.">
+    <meta property="twitter:image" content="{{ asset('img/icono_azul.png') }}">
 
 
     <!-- Fonts -->
@@ -177,7 +177,7 @@
         <p>Echo con ❤ por <span><a href="https://www.depro.tech" target="_blank">DEPRO</a></span></p>
 
     </section>
-    
+
     <script src="{{asset('js/header.js')}}"></script>
     <script src="{{asset('js/header2.js')}}"></script>
     <script src="{{asset('js/gallery.js')}}"></script>
