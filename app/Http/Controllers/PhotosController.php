@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Photo;
 use Exception;
+use Illuminate\Support\Facades\Storage;
 
 class PhotosController extends Controller
 {
@@ -15,6 +16,12 @@ class PhotosController extends Controller
 
         if ($photo) {
             try {
+                $filename = '/photos/' . basename($photo->path);
+
+                if (Storage::disk('public')->exists($filename)) {
+                    Storage::disk('public')->delete($filename);
+                }
+
                 $photo->delete();
                 return response('Photo deleted.', 200);
             } catch (Exception $e) {
