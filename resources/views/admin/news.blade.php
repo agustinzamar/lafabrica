@@ -89,6 +89,7 @@
                                     toastr.success('La novedad fue eliminada.', 'Correcto');
                                 })
                                 .catch(error => {
+                                    console.error(error.response.data)
                                     toastr.error('Lo sentimos, intente de nuevo mas tarde.', 'Algo salio mal')
                                 })
 

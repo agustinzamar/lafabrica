@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Article;
 use App\Photo;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class ArticlesController extends Controller
@@ -16,6 +17,12 @@ class ArticlesController extends Controller
 
         if ($new) {
             try {
+                $filename = '/photos/' . basename($new->photo->path);
+
+                if (Storage::disk('public')->exists($filename)) {
+                    Storage::disk('public')->delete($filename);
+                }
+
                 $new->delete();
                 return response()->json('Ok', 200);
             } catch (Exception $e) {
@@ -114,8 +121,6 @@ class ArticlesController extends Controller
                     throw new Exception('Error on image compression');
                 }
             }
-
-            $new->photo()->save($photo);
         } catch (Exception $e) {
             return redirect()
                 ->back()
