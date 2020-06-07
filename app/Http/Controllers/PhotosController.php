@@ -29,7 +29,7 @@ class PhotosController extends Controller
         $photo = new Photo();
 
         $request->validate([
-            'photo' => 'required|image|max:255',
+            'photo' => 'required|image|max:256',
             'description' => 'string|nullable:max:128',
         ]);
 
@@ -60,7 +60,7 @@ class PhotosController extends Controller
         $photo = Photo::findOrFail($id);
 
         $request->validate([
-            'photo' => 'image|max:255',
+            'photo' => 'image|max:256',
             'description' => 'string|nullable:max:128',
         ]);
 

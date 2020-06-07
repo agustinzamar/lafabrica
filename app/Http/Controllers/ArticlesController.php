@@ -29,11 +29,11 @@ class ArticlesController extends Controller
     public function create(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'photo' => 'required|image',
-            'photo_description' => 'string|nullable',
+            'photo' => 'required|image|max:256',
+            'photo_description' => 'string|nullable|max:128',
             'description' => 'required|string|max:256',
-            'title' => 'required|string',
-            'body' => 'required|string',
+            'title' => 'required|string:max:128',
+            'body' => 'required|string|max:65000',
         ]);
 
         if ($validator->fails()) {
@@ -78,11 +78,11 @@ class ArticlesController extends Controller
         $new = Article::findOrFail($id);
 
         $validator = Validator::make($request->all(), [
-            'photo' => 'image',
-            'photo_description' => 'string|nullable',
+            'photo' => 'image|max:256',
+            'photo_description' => 'string|nullable|max:128',
             'description' => 'string|nullable|max:256',
-            'title' => 'required|string',
-            'body' => 'required|string',
+            'title' => 'required|string|max:128',
+            'body' => 'required|string|max:65000',
         ]);
 
         if ($validator->fails()) {
