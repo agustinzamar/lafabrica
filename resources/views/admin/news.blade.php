@@ -11,12 +11,13 @@
                 Redactar <i class="fas fa-plus-circle"></i>
             </a>
         </div>
-        <div class="col-md-12 mt-3">
+        <div class="col-md-12 mt-3 table-responsive">
             @if ($news)
-            <table class="table">
+            <table class="table" width="100%">
                 <thead>
                     <th width="20%">Foto</th>
-                    <th width="20%">Titulo</th>
+                    <th width="10%">Titulo</th>
+                    <th width="10%">Copete</th>
                     <th width="30%">Cuerpo</th>
                     <th width="25%">Fecha de publicación</th>
                     <th width="5%">Acciones</th>
@@ -30,8 +31,9 @@
                         @else
                         <td></td>
                         @endif
-                        <td>{{ $new->title }}</td>
-                        <td>{!! Str::words($new->body, 20, '...'); !!}</td>
+                        <td>{{ Str::limit($new->title, 40, '...') }}</td>
+                        <td>{{ Str::limit($new->description, 40, '...') }}</td>
+                        <td>{!! Str::limit($new->body, 100, '...') !!}</td>
                         <td>{{ $new->created_at->format('d/m/Y') }}</td>
                         <td>
                             <div class="btn-group">
