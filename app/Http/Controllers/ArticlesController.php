@@ -31,7 +31,7 @@ class ArticlesController extends Controller
         $validator = Validator::make($request->all(), [
             'photo' => 'required|image',
             'photo_description' => 'string|nullable',
-            'description' => 'required|string|max:128',
+            'description' => 'required|string|max:256',
             'title' => 'required|string',
             'body' => 'required|string',
         ]);
@@ -80,7 +80,7 @@ class ArticlesController extends Controller
         $validator = Validator::make($request->all(), [
             'photo' => 'image',
             'photo_description' => 'string|nullable',
-            'description' => 'string|nullable',
+            'description' => 'string|nullable|max:256',
             'title' => 'required|string',
             'body' => 'required|string',
         ]);
