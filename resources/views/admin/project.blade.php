@@ -13,7 +13,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <h5 class="title">Galeria de fotos de "{{ $project->name }}"</h5>
+            <h5 class="title">Galeria de fotos de <strong>{{ $project->name }}</strong></h5>
         </div>
         <div class="col-md-2">
             <a href="{{ route('admin.newPhoto', $project->id) }}" class="btn btn-primary float-right">
@@ -38,7 +38,8 @@
                     <td>{{ $photo->created_at->format('d/m/Y') }}</td>
                     <td>
                         <div class="btn-group">
-                            <a class="btn btn-primary btn-sm mr-2" href="{{ route('admin.newNew', $photo->id) }}">
+                            <a class="btn btn-primary btn-sm mr-2"
+                                href="{{ route('admin.newPhoto', [$project->id,$photo->id]) }}">
                                 <i class="fas fa-pen"></i>
                             </a>
                             <button class="btn btn-danger btn-sm" onclick="deleteItem(this, {{ $photo->id }})">

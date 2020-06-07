@@ -19,9 +19,18 @@ class AdminController extends Controller
         return view('admin.dashboard');
     }
 
-    public function newPhoto()
+    public function newPhoto($project_id, $photo_id = null)
     {
-        return view('admin.newPhoto');
+        $project = Project::findOrFail($project_id);
+        $photo = null;
+        if ($photo_id) {
+            $photo = Photo::findOrFail($photo_id);
+        }
+
+        return view('admin.newPhoto')->with([
+            'photo' => $photo,
+            'project' => $project,
+        ]);
     }
 
     public function news()
