@@ -15,7 +15,10 @@ class MoreLenghtArticleDescription extends Migration
     public function up()
     {
         Schema::table('news', function (Blueprint $table) {
-            $table->string('description', 256)->change();
+            $table
+                ->string('description', 256)
+                ->nullable()
+                ->change();
         });
     }
 

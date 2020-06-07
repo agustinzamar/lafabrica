@@ -15,7 +15,8 @@
         "graham-campbell/markdown": "^12.0",
         "laravel/framework": "^6.2",
         "laravel/tinker": "^2.0",
-        "tightenco/ziggy": "^0.8.1"
+        "tightenco/ziggy": "^0.8.1",
+        "tinify/tinify": "^1.5"
     },
     "require-dev": {
         "facade/ignition": "^1.4",

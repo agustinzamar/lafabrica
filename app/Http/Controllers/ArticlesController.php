@@ -29,7 +29,7 @@ class ArticlesController extends Controller
     public function create(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'photo' => 'required|image|max:256',
+            'photo' => 'required|image|max:10000',
             'photo_description' => 'string|nullable|max:128',
             'description' => 'required|string|max:256',
             'title' => 'required|string:max:128',
@@ -59,7 +59,9 @@ class ArticlesController extends Controller
 
         try {
             $photo->path = $file->storeAs('photos', $name, 'public');
-
+            if (!TinifyController::compress($name)) {
+                throw new Exception('Error on image compression');
+            }
             $new->save();
             $new->photo()->save($photo);
 
@@ -78,7 +80,7 @@ class ArticlesController extends Controller
         $new = Article::findOrFail($id);
 
         $validator = Validator::make($request->all(), [
-            'photo' => 'image|max:256',
+            'photo' => 'image|max:10000',
             'photo_description' => 'string|nullable|max:128',
             'description' => 'string|nullable|max:256',
             'title' => 'required|string|max:128',
@@ -108,6 +110,9 @@ class ArticlesController extends Controller
                 $name = basename($photo->path);
 
                 $photo->path = $file->storeAs('photos', $name, 'public');
+                if (!TinifyController::compress($name)) {
+                    throw new Exception('Error on image compression');
+                }
             }
 
             $new->photo()->save($photo);

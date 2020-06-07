@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Photo;
+use Exception;
 
 class PhotosController extends Controller
 {
@@ -29,7 +30,7 @@ class PhotosController extends Controller
         $photo = new Photo();
 
         $request->validate([
-            'photo' => 'required|image|max:256',
+            'photo' => 'required|image|max:10000',
             'description' => 'string|nullable:max:128',
         ]);
 
@@ -43,6 +44,11 @@ class PhotosController extends Controller
 
         try {
             $photo->path = $file->storeAs('photos', $name, 'public');
+
+            if (!TinifyController::compress($name)) {
+                throw new Exception('Error on image compression');
+            }
+
             $photo->save();
 
             return redirect()
@@ -60,7 +66,7 @@ class PhotosController extends Controller
         $photo = Photo::findOrFail($id);
 
         $request->validate([
-            'photo' => 'image|max:256',
+            'photo' => 'image|max:10000',
             'description' => 'string|nullable:max:128',
         ]);
 
@@ -74,6 +80,10 @@ class PhotosController extends Controller
                 $name = basename($photo->path);
 
                 $photo->path = $file->storeAs('photos', $name, 'public');
+
+                if (!TinifyController::compress($name)) {
+                    throw new Exception('Error on image compression');
+                }
             }
 
             $photo->save();
