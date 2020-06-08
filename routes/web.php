@@ -32,10 +32,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::post('/fotos/delete', 'PhotosController@delete')->name(
         'photos.delete'
     );
-    Route::post('/fotos/create', 'photosController@create')->name(
+    Route::post('/fotos/create', 'PhotosController@create')->name(
         'photos.create'
     );
-    Route::post('/fotos/edit/{id}', 'photosController@edit')->name(
+    Route::post('/fotos/edit/{id}', 'PhotosController@edit')->name(
         'photos.edit'
     );
 
