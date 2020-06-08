@@ -121,6 +121,8 @@ class ArticlesController extends Controller
                     throw new Exception('Error on image compression');
                 }
             }
+
+            $new->photo()->save($photo);
         } catch (Exception $e) {
             return redirect()
                 ->back()
