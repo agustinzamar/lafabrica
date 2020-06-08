@@ -116,6 +116,12 @@ class ArticlesController extends Controller
                 $file = $request->file('photo');
                 $name = basename($photo->path);
 
+                $filename = '/photos/' . $name;
+
+                if (Storage::disk('public')->exists($filename)) {
+                    Storage::disk('public')->delete($filename);
+                }
+
                 $photo->path = $file->storeAs('photos', $name, 'public');
                 if (!TinifyController::compress($name)) {
                     throw new Exception('Error on image compression');
