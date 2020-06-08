@@ -114,15 +114,20 @@ class ArticlesController extends Controller
 
             if ($request->file('photo')) {
                 $file = $request->file('photo');
-                $name = basename($photo->path);
+                $name =
+                    \Str::random(90) .
+                    now()->format('U') .
+                    '.' .
+                    $file->extension();
 
-                $filename = '/photos/' . $name;
+                $fileToDelete = '/photos/' . basename($photo->path);
 
-                if (Storage::disk('public')->exists($filename)) {
-                    Storage::disk('public')->delete($filename);
+                if (Storage::disk('public')->exists($fileToDelete)) {
+                    Storage::disk('public')->delete($fileToDelete);
                 }
 
                 $photo->path = $file->storeAs('photos', $name, 'public');
+
                 if (!TinifyController::compress($name)) {
                     throw new Exception('Error on image compression');
                 }
