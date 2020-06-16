@@ -121,6 +121,33 @@
         contenteditable: 'false',
         rel: 'noopener noreferrer'
         },
+        hooks: {
+            addImageBlobHook: async (blob, callback) => {
+
+                try{
+
+                    const formData = new FormData()
+                    formData.append('photo', blob)
+
+                    const url = route('photo.upload')
+                    const config = {
+                        headers: {
+                            'Content-Type': 'multipart/form-data'
+                        }
+                    }
+
+                    const res = await axios.post(url, formData, config)
+
+                    const imageUrl = `{{ asset('/storage/${res.data}') }}`
+
+                    callback(imageUrl, "alt text");
+                }catch(err){
+                    console.error(err);
+                }
+
+                return false;
+            }
+        }
     });
 
     const form = document.querySelector('#form')

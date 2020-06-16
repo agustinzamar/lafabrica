@@ -35,7 +35,7 @@
             <img src="{{ asset('img/fortalecer.png') }}" alt="Fortalecer">
             <!-- <h2>Fortalecer</h2> -->
             <p>Desarrollamos conocimientos y herramientas para consolidar el compromiso y mejorar las capacidades de las
-                Organizaciones de la Sociedad Civil</p>
+                Organizaciones de la Sociedad Civil.</p>
 
         </div>
 

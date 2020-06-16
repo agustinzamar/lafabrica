@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Photo;
 use Exception;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Storage;
 
 class PhotosController extends Controller
@@ -112,6 +113,34 @@ class PhotosController extends Controller
             return redirect()
                 ->back()
                 ->with(['error' => 'Lo sentimos, intente de nuevo mas tarde']);
+        }
+    }
+
+    public function uploadBlob(Request $request)
+    {
+        $request->validate([
+            'photo' => 'required|max:10000',
+        ]);
+
+        $file = $request->file('photo');
+
+        try {
+            $file = $request->file('photo');
+            $name =
+                \Str::random(90) .
+                now()->format('U') .
+                '.' .
+                $file->extension();
+
+            $path = $file->storeAs('photos', $name, 'public');
+
+            return response()->json($path, 201);
+        } catch (Exception $e) {
+            if (App::environment('local')) {
+                return response()->json($e->getMessage(), 500);
+            } else {
+                return response()->json('Algo salió mal.', 500);
+            }
         }
     }
 }
