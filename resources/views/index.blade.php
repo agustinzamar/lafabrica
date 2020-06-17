@@ -73,8 +73,9 @@
         <div class="texto">
 
             <h2>Cultivar</h2>
-            <p>Espacio de formación e investigación en el campo de las organizaciones sociales, la responsabilidad
-                social y la sociedad civil.</p>
+            <p>Espacio de formación e investigación en el campo de las organizaciones sociales, el desarrollo sostenible
+                y la sociedad
+                civil.</p>
             <a class="saberMas1" href="{{ route('projects') }}#Cultivar">Saber más</a>
 
         </div>
