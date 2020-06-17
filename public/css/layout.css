@@ -11507,6 +11507,8 @@ body {
 }
 
 .contenedor__item {
+    max-width: 1300px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-row-gap: 20px;
