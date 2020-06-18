@@ -54,45 +54,80 @@
 
     <header id="header" class="header">
 
-        <a href={{ route('home') }} class="logo"><img src="{{ asset('img/logo.png') }}" alt="Logo La Fabrica"></a>
+        @auth
+        <div class="header__edit">
+            <p class="header__edit--welcome">
+                Bienvenido, {{ Auth::user()->name }}
+            </p>
 
-        <div class="enlaces">
+            <ul>
+                <li>
+                    <button id="btnEdit"><i class="fas fa-edit"></i></button>
+                </li>
+                <li>
+                    <button id="btnSave" disabled><i class="fas fa-save"></i></button>
+                </li>
+                <li>
+                    <button id="btnCancel" disabled><i class="fas fa-ban"></i></button>
+                </li>
+                <li>
+                    <button id="btnUndo" disabled><i class="fas fa-undo"></i></button>
+                </li>
+                <li>
+                    <button id="btnRedo" disabled><i class="fas fa-redo"></i></button>
+                </li>
+                <li onclick="document.getElementById('logout-form').submit()">
+                    <a href="#">Cerrar Sesión</a>
+                </li>
+                <form action="{{ route('logout') }}" method="post" id="logout-form">
+                    @csrf
+                </form>
+            </ul>
+        </div>
+        @endauth
+
+        <div class="header__public">
+            <a href={{ route('home') }} class="logo"><img src="{{ asset('img/logo.png') }}" alt="Logo La Fabrica"></a>
+
+            <div class="enlaces">
 
 
-            <a href="{{ route('home') }}">
-                <li><span>Inicio</span></li>
-            </a>
-            <a href="{{ route('home') }}#Nosotros">
-                <li><span>Sobre Nosotros</span></li>
-            </a>
-            <a href="{{ route('home') }}#ComoTrabajamos">
-                <li><span>¿Cómo Trabajamos?</span></li>
-            </a>
-            <a href="{{ route('home') }}#QueHacemos">
-                <li><span>¿Qué Hacemos?</span></li>
-            </a>
-            <a href="{{ route('home') }}#Novedades">
-                <li><span>Novedades</span></li>
-            </a>
-            <a href="{{ route('home') }}#Contacto">
-                <li><span>Contacto</span></li>
-            </a>
+                <a href="{{ route('home') }}">
+                    <li><span>Inicio</span></li>
+                </a>
+                <a href="{{ route('home') }}#Nosotros">
+                    <li><span>Sobre Nosotros</span></li>
+                </a>
+                <a href="{{ route('home') }}#ComoTrabajamos">
+                    <li><span>¿Cómo Trabajamos?</span></li>
+                </a>
+                <a href="{{ route('home') }}#QueHacemos">
+                    <li><span>¿Qué Hacemos?</span></li>
+                </a>
+                <a href="{{ route('home') }}#Novedades">
+                    <li><span>Novedades</span></li>
+                </a>
+                <a href="{{ route('home') }}#Contacto">
+                    <li><span>Contacto</span></li>
+                </a>
 
 
-            <div class="redes">
+                <div class="redes">
 
-                <a target="_blank" href="https://www.facebook.com/lafabricajujuy/"><i class="fab fa-facebook-f"></i></a>
-                <a target="_blank" href="https://twitter.com/lafabricajujuy?s=08"><i class="fab fa-twitter"></i></a>
-                <a target="_blank" href="https://www.instagram.com/lafabricajujuy/?igshid=1icfi0o2fdrua"><i
-                        class="fab fa-instagram"></i></a>
-                <a target="_blank" href="https://www.linkedin.com/company/fundaci%C3%B3nlaf%C3%A1brica/about/"><i
-                        class="fab fa-linkedin-in"></i></a>
+                    <a target="_blank" href="https://www.facebook.com/lafabricajujuy/"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a target="_blank" href="https://twitter.com/lafabricajujuy?s=08"><i class="fab fa-twitter"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/lafabricajujuy/?igshid=1icfi0o2fdrua"><i
+                            class="fab fa-instagram"></i></a>
+                    <a target="_blank" href="https://www.linkedin.com/company/fundaci%C3%B3nlaf%C3%A1brica/about/"><i
+                            class="fab fa-linkedin-in"></i></a>
+
+                </div>
 
             </div>
 
+            <button class="js-menu-show header__menu-toggle material-icons">menu</button>
         </div>
-
-        <button class="js-menu-show header__menu-toggle material-icons">menu</button>
 
     </header>
 
@@ -183,6 +218,10 @@
     <script src="{{asset('js/header2.js')}}"></script>
     <script src="{{asset('js/gallery.js')}}"></script>
     <!-- Scripts -->
+
+    <script src="{{ asset('js/editable.js') }}">
+
+    </script>
     @yield('scripts')
 
 </body>

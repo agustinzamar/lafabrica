@@ -1,0 +1,43 @@
+.editable {
+    position: relative;
+}
+
+.editable[contenteditable='true'] {
+    background-color: rgb(206, 10, 10);
+    color: white;
+}
+
+.editable .editable-popup {
+    height: 32px;
+    width: 32px;
+
+    color: white;
+    font-size: 16px;
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(100%, -50%);
+
+    background-color: rgb(236, 29, 29);
+    transition: all ease 0.2s;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.editable:not([contenteditable='true']) .editable-popup {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.editable:not([contenteditable='true']) .editable-popup:hover,
+.editable:not([contenteditable='true']) .editable-popup:active {
+    background-color: rgb(206, 10, 10);
+}

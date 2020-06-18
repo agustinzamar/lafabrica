@@ -40,6 +40,11 @@
     scroll-behavior: smooth;
 }
 
+*:focus,
+*:active {
+    outline: 0;
+}
+
 a,
 a:hover {
     text-decoration: none;
@@ -59,27 +64,86 @@ a:hover {
 
 .header {
     width: 100%;
-    height: 80px;
     position: fixed;
     top: 0px;
-    padding: 0 24px;
     /*	box-shadow: 0 2px 4px rgba(0,0,0,0.4);*/
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
+
     display: flex;
-    -ms-align-items: center;
-    align-items: center;
-    justify-content: space-between;
-    transition: var(--transicion);
+    flex-direction: column;
+
     z-index: 50;
     background: var(--rosado);
 }
 
-.sticky {
-    background: var(--rosado);
-    /*	background: transparent;*/
+.header__edit {
+    height: 40px;
+    padding: 0 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #181818;
+}
+
+.header__edit--welcome {
+    color: #f2f2f2;
+}
+
+.header__edit ul {
+    height: 100%;
+    margin: 0;
+
+    list-style: none;
+
+    display: flex;
+}
+
+.header__edit ul li {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.header__edit ul li:last-child {
+    margin-right: 0;
+}
+
+.header__edit ul li a,
+.header__edit ul li button {
+    background: transparent;
+    border: none;
+
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    outline: 0;
+}
+
+.header__edit ul li a:hover,
+.header__edit ul li button:hover {
+    color: #fff;
+}
+
+.header__edit ul li a:disabled,
+.header__edit ul li button:disabled {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.header__public {
+    width: 100%;
+    height: 80px;
+    padding: 0 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: var(--transicion);
+}
+
+.header__public.sticky {
     background: rgba(249, 59, 128, 0.8);
     height: 56px;
 }

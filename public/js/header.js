@@ -21,11 +21,9 @@
 // 	lastScrollTop = scrollTop;
 // }
 
+window.addEventListener('scroll', scrollHeader)
 
-window.addEventListener("scroll", scrollHeader);
-
-function scrollHeader(){
-
-	let header = document.getElementById('header');
-	header.classList.toggle("sticky", window.scrollY > 0);
+function scrollHeader() {
+    let header = document.querySelector('.header__public')
+    header.classList.toggle('sticky', window.scrollY > 0)
 }

@@ -12,15 +12,16 @@
 
 <div class="PortadaIndex">
 
-    <h1> #ConstruyendoCiudadanía </h1>
+    <h1 class="editable" data-editable="portada"></h1>
     <img src="{{ asset('img/wave.svg') }}" class="PortadaIndex__wave" alt="wave">
 
 </div>
 
 <section class="mision section1" id="Nosotros">
 
-    <p>EN LA <span>FÁBRICA</span> DISEÑAMOS, DESARROLLAMOS E IMPLEMENTAMOS ESTRATEGIAS DE PARTICIPACIÓN CIUDADANA PARA
-        CONTRIBUIR AL DESARROLLO DE LA SOCIEDAD CIVIL.</p>
+    <p class="editable" data-editable="mision">
+
+    </p>
 
 </section>
 
