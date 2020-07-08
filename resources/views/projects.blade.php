@@ -63,9 +63,12 @@
     </div>
 
     <section class="lightview hide" id="gallery">
-        <img src="" alt="" id="gallery_frame">
 
-        <label for="gallery_frame"></label>
+        <div class="lightview__container">
+            <img src="" alt="" id="gallery_frame">
+
+            <label for="gallery_frame" id="gallery_text"></label>
+        </div>
     </section>
 
     @endforeach
@@ -82,6 +85,7 @@
     const slidesList = document.querySelectorAll('.slide')
     const gallery = document.querySelector('#gallery')
     const gallery_frame = document.querySelector('#gallery_frame')
+    const gallery_text = document.querySelector('#gallery_text')
 
     Array.from(slidesList).forEach(slide => {
         
@@ -89,6 +93,7 @@
 
             gallery_frame.src = this.children[0].src
             gallery_frame.alt = this.children[0].alt
+            gallery_text.textContent = this.children[0].alt
             gallery.classList.remove('hide')
 
         })

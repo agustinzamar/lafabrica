@@ -257,6 +257,32 @@ body {
     display: none;
 }
 
+.lightview .lightview__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: red;
+
+    position: relative;
+}
+
+.lightview .lightview__container img {
+    object-fit: contain;
+}
+
+.lightview .lightview__container label {
+    width: 100%;
+    padding: 1rem;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    background-color: #fff;
+    color: #000;
+}
+
 @media screen and (max-width: 1000px) {
     .contenedor__item {
         grid-template-columns: 1fr;
